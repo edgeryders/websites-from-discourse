@@ -1,0 +1,40 @@
+<div class="jumbotron">
+  <div class="col-sm-8 mx-auto">
+    <%= get_discourse_post(section: 'intro', locale: I18n.locale) %>
+  </div>
+</div>
+
+<section id="activity" class="mt-5">
+  <h2><%= t('index.activity_heading') %></h2>
+</section>
+
+
+<section id="about" class="mt-5">
+  <%= get_discourse_post(section: 'about', locale: I18n.locale) %>
+</section>
+
+
+<section id="how_it_works" class="mt-5">
+  <%= get_discourse_post(section: 'how_it_works', locale: I18n.locale) %>
+
+</section>
+
+
+<section id="partners" class="mt-5">
+  <%= get_discourse_post(section: 'partners', locale: I18n.locale) %>
+</section>
+
+
+<section id="about_ngi_forward" class="mt-5">
+  <%= get_discourse_post(section: 'about_ngi_forward', locale: I18n.locale) %>
+</section>
+
+
+<footer class="mt-5 pt-5">
+  <div class="container">
+    <div class="mb-3">
+      <%= t('index.funding_info') %>
+    </div>
+    <%= image_tag 'OC-EC-H2020.jpg' %>
+  </div>
+</footer>

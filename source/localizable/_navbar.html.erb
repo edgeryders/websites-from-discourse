@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <a class="navbar-brand" href="#">
+    <%= image_tag 'site-logo.png', height: '80px' %>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mr-3">
+        <%= link_to t("navbar.home"), '/', class: 'nav-link' %>
+      </li>
+      <li class="nav-item mr-3">
+        <%= link_to t("navbar.share_your_experience"), '#share_your_experience', class: 'nav-link' %>
+      </li>
+      <li class="nav-item mr-3">
+        <%= link_to t("navbar.events"), '#events', class: 'nav-link' %>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+      <li class="nav-item dropdown">
+        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t("navbar.language") %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to 'English', '/#', class: "dropdown-item #{'active' if current_page.url == '/'}" %>
+          <%= link_to 'Français', '/fr/', class: "dropdown-item #{'active' if current_page.url == '/fr/'}" %>
+          <%= link_to 'Deutsch', '/de/', class: "dropdown-item #{'active' if current_page.url == '/de/'}" %>
+          <%= link_to 'Italiano', '/it/', class: "dropdown-item #{'active' if current_page.url == '/it/'}" %>
+          <%= link_to 'Polski', '/pl/', class: "dropdown-item #{'active' if current_page.url == '/pl/'}" %>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t("navbar.about") %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to t("navbar.overview"), '#overview', class: 'dropdown-item' %>
+          <%= link_to t("navbar.consortium"), '#consortium', class: 'dropdown-item' %>
+          <%= link_to t("navbar.deliverables"), '#deliverables',  class: 'dropdown-item' %>
+          <%= link_to t("navbar.privacy"), '#privacy',  class: 'dropdown-item' %>
+          <%= link_to t("navbar.resources"), '#resources',  class: 'dropdown-item' %>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>

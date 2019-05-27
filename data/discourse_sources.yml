@@ -1,0 +1,39 @@
+# Section "A community working together …"
+intro:
+  de: 9966/4
+  en: 9966/2
+  fr: 9966/3
+  it: 9966/5
+  pl: 9966/6
+
+# Section "About this platform/ project"
+about:
+  de: 9967/4
+  en: 9967/2
+  fr: 9967/3
+  it: 9967/5
+  pl: 9967/6
+  
+# Section "How it works"
+how_it_works:
+  de: 9968/4
+  en: 9968/2
+  fr: 9968/3
+  it: 9968/5
+  pl: 9968/6
+  
+# Section "Partners"
+partners:
+  de: 9969/4
+  en: 9969/2
+  fr: 9969/3
+  it: 9969/5
+  pl: 9969/6
+  
+# Section "About NGI Forward"
+about_ngi_forward:
+  de: 9970/4
+  en: 9970/2
+  fr: 9970/3
+  it: 9970/5
+  pl: 9970/6

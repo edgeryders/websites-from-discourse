@@ -1,0 +1,8 @@
+node_modules
+/Gemfile.lock
+/.tmp
+.DS_Store
+/yarn.lock
+.env
+/.idea
+/build

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= current_page.data.title || "NGI Forward" %></title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag "site" %>
+</head>
+<body class="pb-5">
+  <%= partial "localizable/navbar" %>
+
+  <main role="main" class="container">
+    <%= yield %>
+  </main>
+
+  <%= javascript_include_tag "site" %>
+</body>
+</html>
