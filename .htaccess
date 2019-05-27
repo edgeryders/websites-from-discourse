@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Password required"
+AuthUserFile /var/www/clients/client12/ngi.edgeryders.eu/web/.htpasswd
+Require valid-user
