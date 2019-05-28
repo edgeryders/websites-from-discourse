@@ -3,9 +3,28 @@ body {
   background-repeat: repeat;
 }
 
-
 main {
-  background-color:#fff;
+  background-color: #fff;
+}
+
+footer {
+  background: $light;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 80px 0 35px;
+  text-align: center;
+  font-weight: 600;
+  color: $cyan;
+}
+
+.navbar-dark {
+  .nav-link {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+  }
 }
 
 .hero {
@@ -15,3 +34,21 @@ main {
   text-align: center;
   padding-top: 60px;
 }
+
+.page-header {
+  position:relative;
+  .page-title {
+    color:#fff;
+    top: 100px;
+    position: absolute;
+    width: 100%;
+    padding:0 15%;
+    text-align:center;
+  }
+}
+
+#particles-js {
+  width: 100%;
+  height: 300px !important;
+}
+

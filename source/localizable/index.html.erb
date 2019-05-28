@@ -4,8 +4,41 @@
   </div>
 </div>
 
+
 <section id="activity" class="mt-5">
   <h2><%= t('index.activity_heading') %></h2>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Topic</th>
+      <th scope="col">Users</th>
+      <th scope="col">Replies</th>
+      <th scope="col">Views</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%
+      json_data = get_most_recent_topics
+      topics = json_data['topic_list']['topics'].select {|t| t['pinned'] != true}.first(20)
+    %>
+
+    <% topics.each do |t| %>
+      <tr>
+        <td class="font-weight-bold"><%= link_to t['title'], "https://edgeryders.eu/t/#{t['id']}" %></td>
+        <td>
+          <% t['posters'].each do |p| %>
+            <%= image_tag 'https://edgeryders.eu' + json_data['users'].find {|u| u['id'] == p['user_id']}['avatar_template'].sub("{size}", "50"),
+                          class: 'rounded-circle', height: '25px' %>
+          <% end %>
+        </td>
+        <td><%= t['reply_count'] %></td>
+        <td><%= t['views'] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
 </section>
 
 
@@ -16,7 +49,6 @@
 
 <section id="how_it_works" class="mt-5">
   <%= get_discourse_post(section: 'how_it_works', locale: I18n.locale) %>
-
 </section>
 
 
@@ -30,11 +62,3 @@
 </section>
 
 
-<footer class="mt-5 pt-5">
-  <div class="container">
-    <div class="mb-3">
-      <%= t('index.funding_info') %>
-    </div>
-    <%= image_tag 'OC-EC-H2020.jpg' %>
-  </div>
-</footer>

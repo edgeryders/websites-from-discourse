@@ -7,13 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <%= stylesheet_link_tag "site" %>
 </head>
-<body class="pb-5">
-  <%= partial "localizable/navbar" %>
+<body>
+<%= partial "localizable/navbar" %>
+<%= partial "localizable/header" %>
 
-  <main role="main" class="container">
+<main role="main" class="container">
+  <div class="p-4">
     <%= yield %>
-  </main>
+  </div>
+</main>
 
-  <%= javascript_include_tag "site" %>
+<%= partial "localizable/footer" %>
+<%= javascript_include_tag "site" %>
 </body>
 </html>

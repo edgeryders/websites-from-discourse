@@ -1,4 +1,12 @@
-# Section "A community working together …"
+site_title:
+  de: 10019/4
+  en: 10019/2
+  fr: 10019/3
+  it: 10019/5
+  pl: 10019/6
+
+
+# Section "What should the Internet – and all it encompasses …"
 intro:
   de: 9966/4
   en: 9966/2
