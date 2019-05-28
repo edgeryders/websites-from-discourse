@@ -2,6 +2,7 @@
   <a class="navbar-brand" href="#">
     <%= image_tag 'site-logo.png', height: '80px' %>
   </a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,10 +12,10 @@
         <%= link_to t("navbar.home"), '/', class: 'nav-link' %>
       </li>
       <li class="nav-item mr-3">
-        <%= link_to t("navbar.share_your_experience"), 'https://edgeryders.eu/c/ioh/tell-your-story', class: 'nav-link', target: '_blank' %>
+        <%= link_to t("navbar.share_your_experience"), 'https://edgeryders.eu/c/ioh/tell-your-story', class: 'nav-link', title: t('index.external_link_tooltip'), data: {toggle: 'tooltip'} %>
       </li>
       <li class="nav-item mr-3">
-        <%= link_to t("navbar.events"), 'https://edgeryders.eu/c/ioh/events', class: 'nav-link', target: '_blank' %>
+        <%= link_to t("navbar.events"), 'https://edgeryders.eu/c/ioh/events', class: 'nav-link', title: t('index.external_link_tooltip'), data: {toggle: 'tooltip'}  %>
       </li>
     </ul>
 
@@ -49,3 +50,6 @@
 
   </div>
 </nav>
+
+
+

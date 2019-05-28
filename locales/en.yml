@@ -12,6 +12,7 @@ en:
     deliverables: Project Deliverables
     resources: Resources
   index:
+    external_link_tooltip: Link goes to our content creation platform
     share_your_experience: Share your experience
     activity_heading: Activity
     activity_topic: Topic

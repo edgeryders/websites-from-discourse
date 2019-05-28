@@ -2,7 +2,8 @@
   <div class="lead col-sm-9 mx-auto">
     <%= get_discourse_post(section: 'intro', locale: I18n.locale) %>
 
-    <a href="https://edgeryders.eu/c/ioh/tell-your-story" class="btn btn-primary">
+    <a href="https://edgeryders.eu/c/ioh/tell-your-story" class="btn btn-primary"
+       title="<%= t('index.external_link_tooltip')%>" data-toggle="tooltip" data-placement="bottom">
       <%= t('index.share_your_experience') %>
       <%= image_tag 'chevron-right.svg', height: '25px', width: '25px' %>
     </a>
@@ -30,7 +31,12 @@
 
     <% topics.each do |t| %>
       <tr>
-        <td class="font-weight-bold"><%= link_to t['title'], "https://edgeryders.eu/t/#{t['id']}" %></td>
+        <td class="font-weight-bold">
+          <%= link_to t['title'],
+                      "https://edgeryders.eu/t/#{t['id']}",
+                      title: t('index.external_link_tooltip'),
+                      data: {toggle: 'tooltip', placement: 'bottom'} %>
+        </td>
         <td class="d-none d-md-table-cell text-nowrap">
           <% t['posters'].each do |p| %>
             <%= image_tag 'https://edgeryders.eu' + json_data['users'].find {|u| u['id'] == p['user_id']}['avatar_template'].sub("{size}", "50"),
