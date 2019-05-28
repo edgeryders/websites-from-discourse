@@ -1,9 +1,14 @@
 <div class="jumbotron">
-  <div class="col-sm-8 mx-auto">
+  <div class="lead col-sm-9 mx-auto">
     <%= get_discourse_post(section: 'intro', locale: I18n.locale) %>
+
+    <a href="https://edgeryders.eu/c/ioh/tell-your-story" class="btn btn-primary">
+      <%= t('index.share_your_experience') %>
+      <%= image_tag 'chevron-right.svg', height: '25px', width: '25px' %>
+    </a>
+
   </div>
 </div>
-
 
 <section id="activity" class="mt-5">
   <h2><%= t('index.activity_heading') %></h2>
@@ -11,10 +16,10 @@
   <table class="table">
     <thead>
     <tr>
-      <th scope="col">Topic</th>
-      <th scope="col">Users</th>
-      <th scope="col">Replies</th>
-      <th scope="col">Views</th>
+      <th scope="col"><%= t('index.activity_topic') %></th>
+      <th scope="col" class="d-none d-md-table-cell"><%= t('index.activity_users') %></th>
+      <th scope="col"><%= t('index.activity_replies') %></th>
+      <th scope="col"><%= t('index.activity_views') %></th>
     </tr>
     </thead>
     <tbody>
@@ -26,7 +31,7 @@
     <% topics.each do |t| %>
       <tr>
         <td class="font-weight-bold"><%= link_to t['title'], "https://edgeryders.eu/t/#{t['id']}" %></td>
-        <td>
+        <td class="d-none d-md-table-cell text-nowrap">
           <% t['posters'].each do |p| %>
             <%= image_tag 'https://edgeryders.eu' + json_data['users'].find {|u| u['id'] == p['user_id']}['avatar_template'].sub("{size}", "50"),
                           class: 'rounded-circle', height: '25px' %>
@@ -42,13 +47,16 @@
 </section>
 
 
-<section id="about" class="mt-5">
+<section id="consortium" class="mt-5">
   <%= get_discourse_post(section: 'about', locale: I18n.locale) %>
 </section>
 
 
 <section id="how_it_works" class="mt-5">
   <%= get_discourse_post(section: 'how_it_works', locale: I18n.locale) %>
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQlqM-aeE3MrzBn3ROGojQbSzKFtGG-LunZfrcltwDdmjzSx4-uBU7gh144FKmNdtwCw8tZAmZKdV4n/embed?start=false&loop=false&delayms=3000"
+          frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true"
+          webkitallowfullscreen="true"></iframe>
 </section>
 
 

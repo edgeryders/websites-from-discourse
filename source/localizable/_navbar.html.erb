@@ -18,7 +18,7 @@
       </li>
     </ul>
 
-    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+    <ul class="navbar-nav ml-md-auto ">
       <li class="nav-item dropdown">
         <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= t("navbar.language") %>
@@ -39,8 +39,9 @@
         <div class="dropdown-menu dropdown-menu-right">
           <%= link_to t("navbar.overview"), '#overview', class: 'dropdown-item' %>
           <%= link_to t("navbar.consortium"), '#consortium', class: 'dropdown-item' %>
-          <%= link_to t("navbar.deliverables"), '#deliverables',  class: 'dropdown-item' %>
           <%= link_to t("navbar.privacy"), '#privacy',  class: 'dropdown-item' %>
+          <%= link_to t("navbar.legals"), '#legals',  class: 'dropdown-item' %>
+          <%= link_to t("navbar.deliverables"), '#deliverables',  class: 'dropdown-item' %>
           <%= link_to t("navbar.resources"), '#resources',  class: 'dropdown-item' %>
         </div>
       </li>
