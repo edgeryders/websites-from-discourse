@@ -2,8 +2,18 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-6">
-        <%= image_tag 'OC-EC-H2020.jpg', class: 'img-fluid' %>
+      <div class="col-md-6 col-lg-4">
+        <%# image_tag 'OC-EC-H2020.jpg', class: 'img-fluid' %>
+
+        <div class="d-flex flex-row justify-content-end">
+          <div class="eu-banner-info pr-3 pt-4">
+            <span class="align-middle"><%= t('index.eu_banner_info') %></span>
+          </div>
+          <div class="eu-banner">
+            <%= image_tag 'eu_stars_banner.png', class: '' %>
+          </div>
+        </div>
+
       </div>
       <div class="col-md-6">
 

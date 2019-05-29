@@ -3,7 +3,7 @@
     <%= get_discourse_post(section: 'intro', locale: I18n.locale) %>
 
     <a href="https://edgeryders.eu/c/ioh/tell-your-story" class="btn btn-primary"
-       title="<%= t('index.external_link_tooltip')%>" data-toggle="tooltip" data-placement="bottom">
+       title="<%= t('index.external_link_tooltip') %>" data-toggle="tooltip" data-placement="bottom">
       <%= t('index.share_your_experience') %>
       <%= image_tag 'chevron-right.svg', height: '25px', width: '25px' %>
     </a>
@@ -60,9 +60,30 @@
 
 <section id="how_it_works" class="mt-5">
   <%= get_discourse_post(section: 'how_it_works', locale: I18n.locale) %>
-  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQlqM-aeE3MrzBn3ROGojQbSzKFtGG-LunZfrcltwDdmjzSx4-uBU7gh144FKmNdtwCw8tZAmZKdV4n/embed?start=false&loop=false&delayms=3000"
-          frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true"
-          webkitallowfullscreen="true"></iframe>
+
+  <% slides = %w[00 01 02 03 04 05 06 07 08 09 10 11 12 13 14] %>
+  <div id="storyboard-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <% slides.each do |s| %>
+        <li data-target="#storyboard-carousel" data-slide-to="<%= s.to_i %>" class="<%= 'active' if s == slides.first %>"></li>
+      <% end %>
+    </ol>
+    <div class="carousel-inner">
+      <% slides.each do |s| %>
+        <div class="carousel-item <%= 'active' if s == slides.first %>">
+          <%= image_tag "storyboard-slide-#{s}.png", class: 'd-block w-100' %>
+        </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#storyboard-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#storyboard-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </section>
 
 

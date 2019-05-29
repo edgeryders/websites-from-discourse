@@ -8,10 +8,15 @@ import particlesJS from 'particlesjs';
 //   console.log('opened');
 // });
 
+
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
-})
+});
 
+
+$('#storyboard-carousel').carousel({
+    interval: false
+});
 
 window.onload = function () {
     // https://github.com/marcbruederlin/particles.js
