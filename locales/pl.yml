@@ -1,1 +1,23 @@
 pl:
+  navbar:
+    home: Strona główna
+    share_your_experience: Podziel się swoimi doświadczeniami
+    events: Wydarzenia
+    language: Język
+    about: O nas
+    overview: Przegląd
+    consortium: Konsorcjum
+    privacy: Prywatność i zgoda
+    legals: Informacje prawne
+    deliverables: Rezultaty projektu
+    resources: Zasoby
+  index:
+    external_link_tooltip: Link przechodzi do naszej platformy tworzenia treści
+    share_your_experience: Podziel się swoimi doświadczeniami
+    activity_heading: Działalność
+    activity_topic: Temat
+    activity_users: Użytkownicy
+    activity_replies: Odpowiedzi
+    activity_views: Widoki
+    funding_info: Projekt ten otrzymał finansowanie z unijnego programu badań i innowacji "Horyzont 2020" w ramach umowy o dotację nr 825652 na lata 2019-2021.
+    eu_banner_info: Finansowane przez Unię Europejską
