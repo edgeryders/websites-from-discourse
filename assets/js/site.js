@@ -24,14 +24,14 @@ window.onload = function () {
         selector: '#particles-js',
         color: '#868686',
         connectParticles: true,
-        sizeVariations: 3,
+        sizeVariations: 1,
         maxParticles: 80,
-        speed: 0.4,
+        speed: 0.3,
         responsive: [
             {
                 breakpoint: 768,
                 options: {
-                    maxParticles: 40,
+                    maxParticles: 35,
                 }
             }, {
                 breakpoint: 425,
