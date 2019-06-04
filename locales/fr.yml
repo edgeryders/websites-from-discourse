@@ -1,1 +1,23 @@
 fr:
+  navbar:
+    home: Accueil
+    share_your_experience: Partagez votre expérience
+    events: Événements
+    language: Langue
+    about: A propos de
+    overview: "Vue d'ensemble"
+    consortium: Consortium
+    privacy: Vie privée et consentement
+    legals: Informations légales
+    deliverables: Produits livrables du projet
+    resources: Ressources
+  index:
+    external_link_tooltip: Lien vers notre plateforme de création de contenu
+    share_your_experience: Partagez votre expérience
+    activity_heading: Activité
+    activity_topic: Sujet
+    activity_users: Utilisateurs
+    activity_replies: Réponses
+    activity_views: Vues
+    funding_info: "Ce projet a été financé par le programme de recherche et d'innovation Horizon 2020 de l'Union européenne dans le cadre de la convention de subvention n° 825652 de 2019-2021."
+    eu_banner_info: "Financé par l'Union européenne"
