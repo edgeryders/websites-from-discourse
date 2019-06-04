@@ -9,6 +9,7 @@
       <th scope="col" class="d-none d-md-table-cell"><%= t('index.activity_users') %></th>
       <th scope="col"><%= t('index.activity_replies') %></th>
       <th scope="col"><%= t('index.activity_views') %></th>
+      <th scope="col" class="d-none d-md-table-cell text-nowrap"><%= t('index.activity_most_recent') %></th>
     </tr>
     </thead>
     <tbody>
@@ -34,6 +35,9 @@
         </td>
         <td><%= t['posts_count'] %></td>
         <td><%= t['views'] %></td>
+        <td class="d-none d-md-table-cell text-nowrap">
+          <%= distance_of_time_in_words(Time.parse(t['last_posted_at']), Time.now, include_seconds = false, locale: :en_abbrev) %>
+        </td>
       </tr>
     <% end %>
     </tbody>

@@ -19,5 +19,6 @@ en:
     activity_users: Users
     activity_replies: Replies
     activity_views: Views
+    activity_most_recent: Last Activity
     funding_info: "This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 825652 from 2019-2021."
     eu_banner_info: Funded by the European Union
