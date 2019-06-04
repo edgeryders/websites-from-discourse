@@ -1,0 +1,20 @@
+<% img = image_tag logo, alt: name, class: '' %>
+
+<div class="card card-partner mb-4 ml-4">
+  <div class="card-body d-flex align-content-center justify-content-center">
+    <% if logo.present? %>
+        <% if url.present? %>
+          <a href="<%= url %>"><%= img %></a>
+        <% else %>
+          <%= img %>
+        <% end %>
+    <% end %>
+  </div>
+  <div class="card-footer font-weight-bold text-center">
+    <% if url.present? %>
+      <a href="<%= url %>" class="text-dark"><%= name %></a>
+    <% else %>
+      <%= name %>
+    <% end %>
+  </div>
+</div>

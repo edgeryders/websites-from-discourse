@@ -80,6 +80,26 @@ a:not([href]):not([tabindex]) {
 
 }
 
+.card-partner {
+  width:100%;
+  .card-body {
+    min-height:100px;
+    img {
+      max-height: 80px;
+      max-width: 150px;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .card-partner {
+    width: 240px;
+  }
+}
+
+
 section#activity {
   h2 {
     margin-top: 0;
