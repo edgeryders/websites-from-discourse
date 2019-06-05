@@ -84,7 +84,7 @@ a:not([href]):not([tabindex]) {
   width:100%;
   .card-body {
     min-height:100px;
-    img {
+    a, img {
       max-height: 80px;
       max-width: 150px;
       display: block;
