@@ -1,6 +1,6 @@
 # NGI Forward Platform
 
-Consultation platform developed by Edgeryders OÜ for the NGI Forward project. Integrates with Discourse as a CMS backend and discussion space.
+Consultation platform developed by Edgeryders OÜ for the NGI Forward project. Integrates with the open source forum software [Discourse](https://www.discourse.org/) as a CMS backend and discussion space.
 
 
 ## 1. Installation
