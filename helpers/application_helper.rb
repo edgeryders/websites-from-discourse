@@ -24,4 +24,12 @@ module ApplicationHelper
   end
 
 
+  # See https://edgeryders.eu/tags/c/ioh/events/event.json for the available attributes.
+  def get_event_topics
+    uri = URI.parse("https://edgeryders.eu/c/ioh/events/l/agenda.json")
+    response = Net::HTTP.get_response(uri)
+    JSON.parse(response.body.force_encoding("UTF-8"))
+  end
+
+
 end

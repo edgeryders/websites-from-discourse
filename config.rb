@@ -1,3 +1,5 @@
+require 'active_support/all'
+
 activate :directory_indexes
 
 set :css_dir, 'assets/css'

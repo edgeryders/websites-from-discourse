@@ -26,7 +26,7 @@ window.onload = function () {
         connectParticles: true,
         sizeVariations: 1,
         maxParticles: 80,
-        speed: 0.3,
+        speed: 0.35,
         responsive: [
             {
                 breakpoint: 768,

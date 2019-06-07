@@ -1,0 +1,48 @@
+<h1 class="text-center mt-3 mb-5"><%= t("navbar.events") %></h1>
+
+
+<%
+  json_data = get_event_topics
+  topics = json_data['topic_list']['topics']
+%>
+
+<% topics.each do |t| %>
+
+  <div class="card card-event mb-4">
+    <div class="row no-gutters">
+      <div class="col-md-4 d-flex flex-wrap align-items-center">
+        <% if t['thumbnails'].present? %>
+          <img src="<%= t['thumbnails']['retina'] %>" class="card-img">
+        <% else %>
+
+        <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+
+          <p class="card-text">
+            <%= image_tag 'calendar.svg', height: '20px', width: '20px' %>
+
+            <% start = Time.parse(t['event']['start']).in_time_zone(t['event']['timezone'])
+               start_date = start.strftime('%B %d %Y')
+               start_time = start.strftime('%-H:%M')
+            %>
+
+            <%= "#{start_date}#{', '+start_time if start_time != '0:00'}"  %>
+          </p>
+          <h5 class="card-title">
+            <%= link_to t['title'],
+                        "https://edgeryders.eu/t/#{t['id']}",
+                        title: t('index.external_link_tooltip'),
+                        class: '',
+                        data: {toggle: 'tooltip', placement: 'bottom'} %>
+          </h5>
+          <div class="card-text">
+            <%= t['excerpt'] %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

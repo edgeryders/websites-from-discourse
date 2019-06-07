@@ -5,6 +5,7 @@ body {
 
 main {
   background-color: #fff;
+  min-height:400px;
 }
 
 footer {
@@ -115,4 +116,9 @@ section#activity {
 
 .eu-emblem img {
   width: 130px;
+}
+
+.card-event {
+  .card-img {
+  }
 }

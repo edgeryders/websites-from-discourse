@@ -7,3 +7,5 @@ gem "middleman-minify-html", "~> 3.4"
 gem 'redcarpet'
 # https://github.com/karlfreeman/middleman-dotenv
 gem 'middleman-dotenv', '~> 2.0'
+# https://github.com/rails/rails/tree/master/activesupport
+gem 'activesupport'

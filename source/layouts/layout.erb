@@ -14,13 +14,15 @@
 </head>
 <body>
 <%= partial "localizable/navbar" %>
-<%= partial "localizable/header" %>
 
+
+<%= yield_content :page_header  %>
 <main role="main" class="container">
   <div class="p-4 pb-5">
-    <%= yield %>
+    <%= yield :content %>
   </div>
 </main>
+
 
 <%= partial "localizable/footer" %>
 <%= javascript_include_tag "site" %>
