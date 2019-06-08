@@ -22,3 +22,7 @@ it:
     activity_most_recent: L'ultima attività
     funding_info: "Questo progetto ha ricevuto un finanziamento dal programma di ricerca e innovazione Horizon 2020 dell'Unione Europea nell'ambito della convenzione di sovvenzione n. 825652 per il periodo 2019-2021."
     eu_banner_info: "Finanziato dall'Unione Europea"
+  share_your_experience:
+    stats_users: Partecipante
+    stats_stories: Storie
+    stats_comments: Commenti

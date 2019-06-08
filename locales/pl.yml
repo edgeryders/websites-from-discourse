@@ -22,3 +22,7 @@ pl:
     activity_most_recent: Ostatnia aktywność
     funding_info: Projekt ten otrzymał finansowanie z unijnego programu badań i innowacji "Horizon 2020" w ramach umowy o dotację nr 825652 na lata 2019-2021.
     eu_banner_info: Finansowane przez Unię Europejską
+  share_your_experience:
+    stats_users: Uczestnicy
+    stats_stories: Historie
+    stats_comments: Komentarze
