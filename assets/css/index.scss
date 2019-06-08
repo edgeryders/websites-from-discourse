@@ -25,6 +25,7 @@ h2 {
 h3 {
   text-transform: uppercase;
   margin-top: 4rem;
+  color: #CB4761;
 }
 
 a:not([href]):not([tabindex]) {
@@ -67,13 +68,6 @@ a:not([href]):not([tabindex]) {
   .page-header-details {
     color: #fff;
     padding: 3rem 2rem 0;
-
-    .btn {
-      color: #fff;
-      padding: .8rem 2rem;
-      font-weight: 600;
-      font-size: 1.25rem;
-    }
   }
 }
 
@@ -121,4 +115,11 @@ section#activity {
 .card-event {
   .card-img {
   }
+}
+
+.btn-share-your-experience {
+  color: #fff;
+  padding: .8rem 2rem;
+  font-weight: 600;
+  font-size: 1.25rem;
 }

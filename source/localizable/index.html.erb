@@ -6,47 +6,7 @@
 <section id="activity" class="mt-5">
   <h2><%= t('index.activity_heading') %></h2>
 
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col"><%= t('index.activity_topic') %></th>
-      <th scope="col" class="d-none d-md-table-cell"><%= t('index.activity_users') %></th>
-      <th scope="col"><%= t('index.activity_replies') %></th>
-      <th scope="col"><%= t('index.activity_views') %></th>
-      <th scope="col" class="d-none d-md-table-cell text-nowrap"><%= t('index.activity_most_recent') %></th>
-    </tr>
-    </thead>
-    <tbody>
-    <%
-      json_data = get_most_recent_topics
-      topics = json_data['topic_list']['topics'].select {|t| t['pinned'] != true}.first(20)
-    %>
-
-    <% topics.each do |t| %>
-      <tr>
-        <td class="font-weight-bold">
-          <%= link_to t['title'],
-                      "https://edgeryders.eu/t/#{t['id']}",
-                      title: t('index.external_link_tooltip'),
-                      class: 'text-dark',
-                      data: {toggle: 'tooltip', placement: 'bottom'} %>
-        </td>
-        <td class="d-none d-md-table-cell text-nowrap">
-          <% t['posters'].each do |p| %>
-            <%= image_tag 'https://edgeryders.eu' + json_data['users'].find {|u| u['id'] == p['user_id']}['avatar_template'].sub("{size}", "50"),
-                          class: 'rounded-circle', height: '25px' %>
-          <% end %>
-        </td>
-        <td><%= t['posts_count'] %></td>
-        <td><%= t['views'] %></td>
-        <td class="d-none d-md-table-cell text-nowrap">
-          <%= distance_of_time_in_words(Time.parse(t['last_posted_at']), Time.now, include_seconds = false, locale: :en_abbrev) %>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
+  <%= partial 'table_activities', locals: { json_data: get_most_recent_topics} %>
 </section>
 
 
@@ -99,9 +59,19 @@
 </section>
 
 
-
 <section id="about_ngi_forward" class="mt-5">
   <%= get_discourse_post(section: 'about_ngi_forward', locale: I18n.locale) %>
 </section>
 
+
+<% if false %>
+  <section id="deliverables" class="mt-5">
+  </section>
+<% end %>
+
+
+<% if false %>
+  <section id="resources" class="mt-5">
+  </section>
+<% end %>
 

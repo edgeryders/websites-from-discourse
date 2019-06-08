@@ -1,0 +1,7 @@
+<h1 class="text-center mt-3 mb-5"><%= t("navbar.share_your_experience") %></h1>
+
+<%= get_discourse_post(section: 'share_your_experience_intro', locale: I18n.locale) %>
+
+<%= partial 'btn_share_you_experience', locals: { css_class: 'mt-4 mb-5'} %>
+
+<%= partial 'table_activities', locals: { json_data: get_tell_your_story_topics} %>
