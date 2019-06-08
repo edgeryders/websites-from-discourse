@@ -29,7 +29,7 @@
                         class: 'rounded-circle', height: '25px' %>
         <% end %>
       </td>
-      <td><%= t['posts_count'] %></td>
+      <td><%= t['posts_count']-1 %></td>
       <td><%= t['views'] %></td>
       <td class="d-none d-md-table-cell text-nowrap">
         <%= distance_of_time_in_words(Time.parse(t['last_posted_at']), Time.now, include_seconds = false, locale: :en_abbrev) %>
