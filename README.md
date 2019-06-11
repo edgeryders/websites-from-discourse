@@ -25,14 +25,39 @@ The website built here can be seen live under [ngi.edgeryders.eu](https://ngi.ed
 
 ## 2. Installation
 
-TODO
+For deployment, you need to install the following on your server:
+
+* `git`
+* Ruby
+* `bundler`, the Ruby dependency manager
+* `npm`, needed for Bootstrap
+* [Middleman](https://middlemanapp.com/)
+* the code from this repository, by cloning the repository
+
+After the basic installation is done, configure it as follows:
+
+1. Make the `DOCUMENT_ROOT` of your website point to the `build/` subdirectory of your copy of this repository.
+
+2. Create a build script `deploy.sh` and place it into the root directory of your copy of this repository. Content will usually be like this:
+
+    ```
+    #!/bin/bash
+    git pull https://github.com/edgeryders/ngi-forward-platform;
+    LC_ALL="en_US.UTF-8" bundle exec middleman build;
+    ```
+
+3. Execute your `deploy.sh` and check if the website is now accessible.
+
+4. Configure cron to call `deploy.sh` regularly, for example once per hour.
 
 
 ## 3. Usage
 
-To edit content, edit the relevant Discourse posts defined in the [mapping file](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml). It makes sense to place all this content into one Discourse category. We used the [Internet of Humans → Web Content](https://edgeryders.eu/c/ioh/web-content) sub-category. It is non-public to prevent redundant public content on the Internet (which may lead to user confusion and SEO penalties).
+**Editing content.** Edit the relevant Discourse posts defined in the [mapping file](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml). It makes sense to place all this content into one Discourse category. We used the [Internet of Humans → Web Content](https://edgeryders.eu/c/ioh/web-content) sub-category. It is non-public to prevent redundant public content on the Internet (which may lead to user confusion and SEO penalties).
 
-The website will rebuild itself automatically every hour. When you are editing content and want to see how the results look, you can trigger a rebuilding via SSH as follows:
+**Editing templates, i18n string translations or code.** These parts of the website are directly hosted inside this Github repository. Edit them with the usual pull/edit/commit/push git workflow. For small edits, you can also directly change the file using the Github web interface.
+
+**Rebuilding the site.** The website will rebuild itself automatically every hour, which includes updating the repository from Github, all content and all other dynamic elements. When you are editing and want to see how the results look, you can trigger a rebuilding via SSH as follows:
 
 ```
 ssh edgeryders_ngi_user@server.edgeryders.eu
