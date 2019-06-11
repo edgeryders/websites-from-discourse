@@ -20,7 +20,7 @@ A web-based consultation platform, developed by [Edgeryders OÜ](https://edgeryd
 
 ## 1. Overview
 
-Integrates with the open source forum software [Discourse](https://www.discourse.org/) as a CMS backend and discussion space.
+The website built here can be seen live under [ngi.edgeryders.eu](https://ngi.edgeryders.eu/) (preliminary domain, will change later). It uses the static website framework [Middleman](https://middlemanapp.com/) and gets its content mostly from the open source forum software [Discourse](https://www.discourse.org/). This allows using Discourse as a basic CMS to edit the content on a website. Like Discourse, all content uses Markdown as markup language.
 
 
 ## 2. Installation
@@ -35,7 +35,27 @@ TODO
 
 ## 4. Software architecture
 
-TODO
+This website uses the static website framework [Middleman](https://middlemanapp.com/). However, unlike any "normal" Middleman based website, the website is automatically rebuilt in regular intervals (like, hourly) by a Middleman installation on the server. This allows to integrate dynamic content via API calls (if it does not need updates too often).
+
+Currently, this website integrates the following dynamic elements:
+
+* formatted content on the pages incl. images, which can be managed in an external CMS-like system; we use non-public forum posts in the open source forum software [Discourse](https://www.discourse.org/) for this purpose, because our [main website](https://edgeryders.eu/) is made with Discourse
+
+* **Statistics.** The number of topics, posts and users active in a Discourse category.
+
+* **Thread lists.** Detailed lists of Discourse forum topics in a certain category.
+
+* **Events list.** Obtained from all Discourse topics in a certain category that have a date and time attached (via the [Discourse events plugin](https://meta.discourse.org/t/69776)). Each event is shown with date, time, thumbnail image, title and teaser of the main text.
+
+* **Other.** It is easily possible to embed any external content that can be accessed by API or simply via HTTP and that can be converted to the publishable form with some code. The result should be HTML with CSS and optionally JavaScript. For example, data visualizations such as [graphs about interactions on a Discourse forum](https://edgeryders.eu/t/10113) can be embedded in this way.
+
+Other major software technologies and components used:
+
+* **Bootstrap.** A mature HTML+CSS template framework developed by Twitter.
+
+* **Markdown.** Like in Discourse, all content uses Markdown as the markup language. It is converted to HTML during the Middleman build process.
+
+* **Ruby.** Because Middleman is written in Ruby, and it fits nicely Discourse is in Ruby as well. This is pure Ruby code, without the Ruby on Rails framework.
 
 
 ## 5. Licence
