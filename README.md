@@ -1,19 +1,44 @@
 # NGI Forward Platform
 
-Consultation platform developed by Edgeryders OÜ for the NGI Forward project. Integrates with the open source forum software [Discourse](https://www.discourse.org/) as a CMS backend and discussion space.
+A web-based consultation platform, developed by [Edgeryders OÜ](https://edgeryders.eu/t/6640) for the NGI Forward project.
 
 
-## 1. Installation
+## Content
+
+[**1. Overview**](#1-overview)
+
+[**2. Installation**](#2-installation)
+
+[**3. Usage**](#3-usage)
+
+[**4. Software architecture**](#4-software-architecture)
+
+[**5. Licence**](#5-licence)
+
+------
+
+
+## 1. Overview
+
+Integrates with the open source forum software [Discourse](https://www.discourse.org/) as a CMS backend and discussion space.
+
+
+## 2. Installation
 
 TODO
 
 
-## 2. Software architecture
+## 3. Usage
 
 TODO
 
 
-## 3. Licence
+## 4. Software architecture
+
+TODO
+
+
+## 5. Licence
 
 In general, the MIT Licence applies to this software (see file [`LICENSE`](https://github.com/edgeryders/ngi-forward-platform/blob/master/LICENSE)). The following exceptions apply:
 
