@@ -30,7 +30,18 @@ TODO
 
 ## 3. Usage
 
-TODO
+To edit content, edit the relevant Discourse posts defined in the [mapping file](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml). It makes sense to place all this content into one Discourse category. We used the [Internet of Humans → Web Content](https://edgeryders.eu/c/ioh/web-content) sub-category. It is non-public to prevent redundant public content on the Internet (which may lead to user confusion and SEO penalties).
+
+The website will rebuild itself automatically every hour. When you are editing content and want to see how the results look, you can trigger a rebuilding via SSH as follows:
+
+```
+ssh edgeryders_ngi_user@server.edgeryders.eu
+
+web32@server:~$ cd /var/www/clients/client12/ngi.edgeryders.eu/web
+web32@server:~$ ./deploy.sh
+```
+
+(Later, [we will also provide a URL switch](https://github.com/edgeryders/ngi-forward-platform/issues/38) for the same purpose.)
 
 
 ## 4. Software architecture
@@ -39,7 +50,7 @@ This website uses the static website framework [Middleman](https://middlemanapp.
 
 Currently, this website integrates the following dynamic elements:
 
-* formatted content on the pages incl. images, which can be managed in an external CMS-like system; we use non-public forum posts in the open source forum software [Discourse](https://www.discourse.org/) for this purpose, because our [main website](https://edgeryders.eu/) is made with Discourse
+* **Formatted content.** The content blocks incl. images used on the various pages can be managed in an external CMS-like system. We use non-public, wiki-type posts in the open source forum software [Discourse](https://www.discourse.org/) for this purpose, because our [main website](https://edgeryders.eu/) is made with Discourse. Each text block maps to one topic in Discourse, and each translation of that text block to one post in that topic. The mapping is defined in [`data/discourse_sources.yml`](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml).
 
 * **Statistics.** The number of topics, posts and users active in a Discourse category.
 
