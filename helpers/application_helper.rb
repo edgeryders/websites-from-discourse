@@ -22,13 +22,13 @@ module ApplicationHelper
     get_json_data('https://edgeryders.eu/c/ioh.json')
   end
 
-  def get_tell_your_story_topics
-    get_json_data('https://edgeryders.eu/c/ioh/tell-your-story.json')
-  end
-
   # See https://edgeryders.eu/tags/c/ioh/events/event.json for the available attributes.
   def get_event_topics
     get_json_data('https://edgeryders.eu/c/ioh/events/l/agenda.json')
+  end
+
+  def get_tell_your_story_topics
+    get_json_data('https://edgeryders.eu/c/ioh.json')
   end
 
   def get_tell_your_story_stats
@@ -36,7 +36,7 @@ module ApplicationHelper
     stats = OpenStruct.new(user_count: 0, topic_count: 0, comment_count: 0)
     user_ids = []
     loop do
-      results = get_json_data("https://edgeryders.eu/c/ioh/tell-your-story.json?page=#{page}")
+      results = get_json_data("https://edgeryders.eu/c/ioh.json?page=#{page}")
       if results['users'].present?
         user_ids += results['users'].map {|u| u['id']}
         stats.topic_count += results['topic_list']['topics'].count
