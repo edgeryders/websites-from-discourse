@@ -17,6 +17,17 @@
       <li class="nav-item mr-3">
         <%= link_to t("navbar.events"), i18n_path('events'), class: 'nav-link' %>
       </li>
+      <li class="nav-item dropdown mr-3">
+        <a class="nav-item nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t("navbar.stakeholder") %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to t("navbar.policymakers"), 'https://edgeryders.eu/search?q=category%3A315%20tags%3Aioh-policy', class: "dropdown-item", title: t('index.external_link_tooltip'), data: {toggle: 'tooltip', placement: 'right' } %>
+          <%= link_to t("navbar.researchers"), 'https://edgeryders.eu/search?q=category%3A315%20tags%3Aioh-research', class: "dropdown-item", title: t('index.external_link_tooltip'), data: {toggle: 'tooltip', placement: 'right' } %>
+          <%= link_to t("navbar.innovators"), 'https://edgeryders.eu/search?q=category%3A315%20tags%3Aioh-innovation', class: "dropdown-item", title: t('index.external_link_tooltip'), data: {toggle: 'tooltip', placement: 'right' } %>
+          <%= link_to t("navbar.general_public"), 'https://edgeryders.eu/search?q=category%3A315%20tags%3Aioh-general', class: "dropdown-item", title: t('index.external_link_tooltip'), data: {toggle: 'tooltip', placement: 'right' } %>
+        </div>
+      </li>
     </ul>
 
     <ul class="navbar-nav ml-md-auto ">
