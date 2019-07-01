@@ -18,7 +18,7 @@
 <section id="how_it_works" class="mt-5">
   <%= get_discourse_post(section: 'how_it_works', locale: I18n.locale) %>
 
-  <% slides = %w[00 01 02 03 04 05 06 07 08 09 10 11 12 13 14] %>
+  <% slides = %w[01 02 03 04 05 06 07] %>
   <div id="storyboard-carousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <% slides.each do |s| %>
@@ -76,4 +76,3 @@
   <section id="resources" class="mt-5">
   </section>
 <% end %>
-
