@@ -48,7 +48,18 @@ After the basic installation is done, configure it as follows:
 
 3. Execute your `deploy.sh` and check if the website is now accessible.
 
-4. Configure cron to call `deploy.sh` regularly, for example once per hour.
+4. Configure a cron job that runs `deploy.sh` regularly, for example once per hour or once in 15 minutes, depending on how close to realtime you need the dynamic information on the site.
+
+    Configuring cron jobs can be horrible if you need to provide certain environment for your command to run. For example, if you use `chruby` or another mechanism to select one of multiple installed Ruby versions, your `deploy.sh` depends on `$PATH` etc. changes as set up by that system. In the case of `chruby`, we had to do the following steps until the cron job started to work:
+    
+    1. Adding the environment changes done by `chruby` (as seen in `/etc/profile.d/chruby.sh`) to the top of the `deploy.sh` script:
+    
+           source /usr/local/share/chruby/chruby.sh
+           source /usr/local/share/chruby/auto.sh
+    
+    2. Configuring the cron job in `/etc/crontab` as follows:
+    
+           */15 * * * * username bash --login -c '/path/to/deploy.sh' >>/path/to/cron.log 2>>/path/to/cron_error.log
 
 
 ## 3. Usage
