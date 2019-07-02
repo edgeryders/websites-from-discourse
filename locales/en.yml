@@ -11,15 +11,16 @@ en:
     language: Language
     about: About
     project: The Project
-    consortium: Consortium
+    participate: Take part
     privacy: Privacy & Consent
     legals: Legal information
+    consortium: Consortium
     deliverables: Project Deliverables
     resources: Resources
   index:
-    external_link_tooltip: Link goes to our content creation platform
+    external_link_tooltip: Link goes to the community forum section.
     share_your_experience: Share your experience
-    activity_heading: Activity
+    activity_heading: Latest Activity
     activity_topic: Topic
     activity_users: Users
     activity_replies: Replies

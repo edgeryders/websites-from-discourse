@@ -11,15 +11,16 @@ pl:
     language: Język
     about: O nas
     project: Projekt
-    consortium: Konsorcjum
+    participate: Weź udział
     privacy: Prywatność i zgoda
     legals: Informacje prawne
+    consortium: Konsorcjum
     deliverables: Rezultaty projektu
     resources: Zasoby
   index:
-    external_link_tooltip: Link przechodzi do naszej platformy tworzenia treści
+    external_link_tooltip: Link przechodzi do sekcji forum społeczności.
     share_your_experience: Podziel się swoimi doświadczeniami
-    activity_heading: Działalność
+    activity_heading: Najnowsza działalność
     activity_topic: Temat
     activity_users: Użytkownicy
     activity_replies: Odpowiedzi

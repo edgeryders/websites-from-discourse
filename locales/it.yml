@@ -11,15 +11,16 @@ it:
     language: Lingua
     about: A proposito di
     project: Il progetto
-    consortium: Consorzio
+    participate: Partecipare
     privacy: Privacy & Consenso
     legals: Informazioni legali
+    consortium: Consorzio
     deliverables: Risultati del progetto
     resources: Risorse
   index:
-    external_link_tooltip: Il link va alla nostra piattaforma di creazione di contenuti
+    external_link_tooltip: Il link va alla sezione forum della comunità.
     share_your_experience: Condividi la tua esperienza
-    activity_heading: Attività
+    activity_heading: Attività più recenti
     activity_topic: Argomento
     activity_users: Utenti
     activity_replies: Risposte

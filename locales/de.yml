@@ -11,13 +11,14 @@ de:
     language: Language
     about: Über uns
     project: Das Projekt
-    consortium: Konsortium
+    participate: Nimm teil!
     privacy: Datenschutz & Einverständnis
     legals: Gesetzliche Informationen
+    consortium: Konsortium
     deliverables: Projekt-Ergebnisse
     resources: Ressourcen
   index:
-    external_link_tooltip: Link führt zu unserer Autorenplattform
+    external_link_tooltip: Link führt zum Community-Forum.
     share_your_experience: Trage Deine Erfahrungen bei
     activity_heading: Neueste Beiträge
     activity_topic: Thema

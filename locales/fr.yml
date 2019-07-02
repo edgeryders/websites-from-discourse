@@ -11,15 +11,16 @@ fr:
     language: Langue
     about: A propos de
     project: Le projet
-    consortium: Consortium
+    participate: Participez
     privacy: Vie privée et consentement
     legals: Informations légales
+    consortium: Consortium
     deliverables: Produits livrables du projet
     resources: Ressources
   index:
-    external_link_tooltip: Lien vers notre plateforme de création de contenu
+    external_link_tooltip: Lien vers la section forum communautaire.
     share_your_experience: Partagez votre expérience
-    activity_heading: Activité
+    activity_heading: Activité la plus récente
     activity_topic: Sujet
     activity_users: Utilisateurs
     activity_replies: Réponses
