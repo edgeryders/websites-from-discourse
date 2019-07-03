@@ -68,7 +68,7 @@ After the basic installation is done, configure it as follows:
 
 **Editing templates, i18n string translations or code.** These parts of the website are directly hosted inside this Github repository. Edit them with the usual pull/edit/commit/push git workflow. For small edits, you can also directly change the file using the Github web interface.
 
-**Rebuilding the site.** The website will rebuild itself automatically every hour, which includes updating the repository from Github, all content and all other dynamic elements. When you are editing and want to see how the results look, you can trigger a rebuilding via SSH as follows:
+**Rebuilding the site.** The website will rebuild itself automatically at every cron job run, which includes updating the repository from Github, all content and all other dynamic elements. When you are editing and immediately want to see how the results look, you can trigger a rebuilding via SSH as follows:
 
 ```
 ssh edgeryders_ngi_user@server.edgeryders.eu
@@ -102,7 +102,7 @@ Other major software technologies and components used:
 
 * **Markdown.** Like in Discourse, all content uses Markdown as the markup language. It is converted to HTML during the Middleman build process.
 
-* **Ruby.** Because Middleman is written in Ruby, and it fits nicely Discourse is in Ruby as well. This is pure Ruby code, without the Ruby on Rails framework.
+* **Ruby.** Because Middleman is written in Ruby. It fits nicely because Discourse itself is written in Ruby as well. This is pure Ruby code, without the Ruby on Rails framework.
 
 
 ## 5. Licence
