@@ -1,6 +1,6 @@
 # NGI Forward Platform
 
-A web-based exchange platform for a co-design and participation process. Developed by [Edgeryders OÜ](https://edgeryders.eu/t/6640) for the NGI Forward project.
+A web-based exchange platform for a co-design and participation process. Developed by [Edgeryders OÜ](https://edgeryders.eu/t/6640) for the NGI Forward project. The platform can be seen live under [ngi.edgeryders.eu](https://ngi.edgeryders.eu/) (preliminary domain, will change later).
 
 
 ## Content
@@ -20,7 +20,11 @@ A web-based exchange platform for a co-design and participation process. Develop
 
 ## 1. Overview
 
-The website built here can be seen live under [ngi.edgeryders.eu](https://ngi.edgeryders.eu/) (preliminary domain, will change later). It uses the static website framework [Middleman](https://middlemanapp.com/) and gets its content mostly from the open source forum software [Discourse](https://www.discourse.org/). This allows using Discourse as a basic CMS to edit the content on a website. Like Discourse, all content uses Markdown as markup language.
+This platform uses the static website framework [Middleman](https://middlemanapp.com/) and gets its content mostly from the open source forum software [Discourse](https://www.discourse.org/). This allows using Discourse as a basic CMS to edit the content on a website.
+
+Unlike a typical static website, this one allows quasi-dynamic content because Middleman is installed server-side and re-generates the website every few minutes. The platform supports multiple language versions and like in Discourse, all content uses Markdown for formatting, while HTML is als supported.
+
+The result is a fast web platform with dynamic content that has no or minimal potential security issues because it's a static website. Also the source code turns out to be easy and comfortable to maintain, as it is very compact due to the content being managed externally in Discourse rather than in the source files.
 
 
 ## 2. Installation
