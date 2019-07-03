@@ -1,6 +1,6 @@
 # NGI Forward Platform
 
-A web-based consultation platform, developed by [Edgeryders OÜ](https://edgeryders.eu/t/6640) for the NGI Forward project.
+A web-based exchange platform for a co-design and participation process. Developed by [Edgeryders OÜ](https://edgeryders.eu/t/6640) for the NGI Forward project.
 
 
 ## Content
