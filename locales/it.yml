@@ -26,6 +26,8 @@ it:
     activity_replies: Risposte
     activity_views: Viste
     activity_most_recent: L'ultima attività
+    ngi_initiative_title: "NGI Forward, parte dell'iniziativa NGI"
+    ngi_initiative_info: "Il progetto NGI Forward e la piattaforma di scambio fanno parte dell'iniziativa Next Generation Internet (NGI), lanciata dalla Commissione europea nell'autunno 2016."
     funding_info: "Questo progetto ha ricevuto un finanziamento dal programma di ricerca e innovazione Horizon 2020 dell'Unione Europea nell'ambito della convenzione di sovvenzione n. 825652 per il periodo 2019-2021."
     eu_banner_info: "Finanziato dall'Unione Europea"
   share_your_experience:
