@@ -120,7 +120,15 @@ The result is a fast web platform with dynamic content that has no or minimal po
 
 **Editing content.** Edit the relevant Discourse posts defined in the [mapping file](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml). It makes sense to place all this content into one Discourse category. We used the [Internet of Humans → Web Content](https://edgeryders.eu/c/ioh/web-content) sub-category. It is non-public to prevent redundant public content on the Internet (which may lead to user confusion and SEO penalties).
 
-**Editing templates, i18n string translations or code.** These parts of the website are directly hosted inside this Github repository. Edit them with the usual pull/edit/commit/push git workflow. For small edits, you can also directly change the file using the Github web interface.
+**Editing templates, i18n string translations or code.** These parts of the website are directly hosted inside this Github repository. Edit them with the usual pull/edit/commit/push git workflow. For small edits, you can also directly change the file using the Github web interface. Hints on where to edit what:
+
+* **Color scheme.** See `assets/css/_bootstrap-variables.scss`.
+
+* **Logos.** See `source/assets/`.
+
+* **CSS overrides and additions.** See `assets/css/index.scss`. Everything you want to look different from standard Bootstrap should go here.
+
+* **Discourse content sources.** See `data/discourse_sources.yml`.
 
 **Rebuilding the site.** If set up as instructed above, on a sever the website will rebuild itself automatically at every cron job run, which includes updating the repository from Github, all content and all other dynamic elements. When you are editing the site and want to see the results immediately, on a server you can also execute the cron job script manually:
 
