@@ -1,6 +1,6 @@
 {
-  "name": "ngi-forward-platform",
-  "version": "1.0.0",
+  "name": "reef2",
+  "version": "0.1",
   "description": "",
   "dependencies": {
     "bootstrap": "^4.3.1",
