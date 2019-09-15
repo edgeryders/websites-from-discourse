@@ -1,6 +1,6 @@
 {
   "name": "reef2",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "",
   "dependencies": {
     "bootstrap": "^4.3.1",
