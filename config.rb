@@ -27,9 +27,5 @@ configure :production do
   activate :asset_hash, ignore: [/\.jpg\Z/, /\.png\Z/, /\.svg\Z/]
 end
 
-activate :i18n do |i18n|
-  i18n.locales =  %w[en de fr it pl]
-end
-
 # Uses .env in the root of the project
 activate :dotenv

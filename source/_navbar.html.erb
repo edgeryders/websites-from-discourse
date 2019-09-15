@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" href="#">
+    <%= image_tag 'site-logo.png', height: '80px' %>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mr-3">
+        <%= link_to "Home", '/', class: 'nav-link' %>
+      </li>
+      <li class="nav-item dropdown mr-3">
+        <a class="nav-item nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stakeholder</a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to "Policymakers", 'https://edgeryders.eu/search?q=category%3A315%20tags%3Aioh-policy', class: "dropdown-item" %>
+          <%= link_to "Researchers", 'https://edgeryders.eu/search?q=category%3A315%20tags%3Aioh-research', class: "dropdown-item" %>
+          <%= link_to "Innovators", 'https://edgeryders.eu/search?q=category%3A315%20tags%3Aioh-innovation', class: "dropdown-item" %>
+          <%= link_to "General public", 'https://edgeryders.eu/search?q=category%3A315%20tags%3Aioh-general', class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-md-auto ">
+      <li class="nav-item dropdown">
+        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to "The Project", i18n_path('/#project'), class: 'dropdown-item' %>
+          <%= link_to "Take part", i18n_path('/#participate'), class: 'dropdown-item' %>
+          <%= link_to "Privacy & Consent", i18n_path('/#privacy'), class: 'dropdown-item' %>
+          <%= link_to "Legal information", i18n_path('/#legals'), class: 'dropdown-item' %>
+          <%= link_to "Consortium", i18n_path('/#consortium'), class: 'dropdown-item' %>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>

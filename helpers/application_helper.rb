@@ -7,7 +7,7 @@ module ApplicationHelper
   # locale:
   def get_discourse_post(args = {})
     api_key = ENV['DISCOURSE_API_KEY']
-    id = data.discourse_sources.send(args[:section]).send(args[:locale])
+    id = data.discourse_sources.send(args[:section])
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
 
     uri = URI.parse("https://edgeryders.eu/raw/#{id}?api_key=#{api_key}")
