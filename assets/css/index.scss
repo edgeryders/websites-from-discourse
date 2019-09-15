@@ -1,11 +1,10 @@
 body {
-  background-image: url("/assets/images/site-background.png");
-  background-repeat: repeat;
+  background-color: #003874;
 }
 
 main {
-  background-color: #fff;
-  min-height:400px;
+  background-color: $light;
+  min-height: 400px;
 }
 
 footer {
