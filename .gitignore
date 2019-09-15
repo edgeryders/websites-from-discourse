@@ -1,10 +1,24 @@
 node_modules
+
+# NPM packages as installed during the last run of "npm install".
 /package-lock.json
+
+# Gem packages as installed during the last run of "bundle install".
 /Gemfile.lock
+
 /.tmp
+
 .DS_Store
+
 /yarn.lock
+
+# Definition of environment variables, which can include sensitive information (DISCOURSE_API_KEY).
 .env
+
+# IDE project configuration files.
 /.idea
+
+# Output directory of the finished website.
 /build
+
 *.log

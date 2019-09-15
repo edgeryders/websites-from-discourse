@@ -81,15 +81,21 @@ The result is a fast web platform with dynamic content that has no or minimal po
     npm install;
     ```
 
-5. **Configure the webserver.** At the minimum, create a new virtual host / website configuration and point its `DOCUMENT_ROOT` to the `build/` subdirectory of your copy of this repository.
+5. **Configure the Discourse API key.** The application uses a Discourse API key to obtain website content from topics in a category that should be access protected to not be confusing redundant content in addition to the website. Obtain a Discourse admin API key under "☰ → Admin → API → API" of your Discourse installation. Then create a file `.env` in the project root directory and put in your API key in the following format:
 
-6. **Deploy and test.** Execute the following command in the repository's directory and check if the website is accessible afterwards.
+    ```
+    DISCOURSE_API_KEY=95a7f30ed63…
+    ```
+
+6. **Configure the webserver.** At the minimum, create a new virtual host / website configuration and point its `DOCUMENT_ROOT` to the `build/` subdirectory of your copy of this repository.
+
+7. **Build and test.** Execute the following command in the repository's directory and check if the website is accessible afterwards.
 
     ```
     LC_ALL="en_US.UTF-8" bundle exec middleman build --verbose;
     ```
 
-7. **Configure deployment.** For automatic updates of the website when deployed on a server, you need a cron job that runs a deployment script (here `deploy.sh`) regularly, for example once per hour or once in 15 minutes, depending on how close to realtime you need the dynamic information on the site.
+8. **Configure deployment.** For automatic updates of the website when deployed on a server, you need a cron job that runs a deployment script (here `deploy.sh`) regularly, for example once per hour or once in 15 minutes, depending on how close to realtime you need the dynamic information on the site.
 
     Configuring cron jobs can be horrible if you need to provide certain environment for your command to run. For example, if you use `chruby` or another mechanism to select one of multiple installed Ruby versions, your `deploy.sh` depends on `$PATH` etc. changes as set up by that system. In the case of `chruby`, our `deploy.sh` had to look like this:
 
