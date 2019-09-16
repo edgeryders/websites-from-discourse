@@ -1,6 +1,7 @@
-<% content_for :page_header do %>
-  <%= partial "header" %>
-<% end %>
+<%# Enable to create an intro section before the main content section. %>
+<%# content_for :page_header do %>
+  <%#= partial "intro" %>
+<%# end %>
 
 <section id="pitch" class="mt-5">
   <%= get_discourse_post(section: 'frontpage_pitch') %>
@@ -13,7 +14,7 @@
 </section>
 
 <section id="how_it_works" class="mt-5">
-  <%= get_discourse_post(section: 'how_it_works') %>
+  <%#= get_discourse_post(section: 'how_it_works') %>
 
   <% slides = %w[01 02 03 04 05 06 07] %>
   <div id="storyboard-carousel" class="carousel slide" data-ride="carousel">

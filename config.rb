@@ -27,5 +27,6 @@ configure :production do
   activate :asset_hash, ignore: [/\.jpg\Z/, /\.png\Z/, /\.svg\Z/]
 end
 
-# Uses .env in the root of the project
+# Allows to define environment variables via file .env in the project root directory.
+# Used to define DISCOURSE_API_KEY; see application_helper.rb.
 activate :dotenv
