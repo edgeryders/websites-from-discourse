@@ -42,8 +42,7 @@ The result is a fast web platform with dynamic content that has no or minimal po
 **Requirements.** You need to install the following prerequisites on your computer resp. your server:
 
 * **`git`.** A version control system for source files.
-* **Ruby.** The programming language of Middleman and Discourse. Under Ubuntu installed with `sudo apt install ruby`. The Ubuntu packages also provide `gem`.
-* **`bundler`.** The Ruby dependency manager. Installed with `sudo gem install bundler`.
+* **Ruby.** The programming language of Middleman and Discourse. Under Ubuntu installed with `sudo apt install ruby`. The Ubuntu packages also provides `gem`. For this repo, you will need Ruby 2.5.3 (or higher, probably).
 * **`npm`.** The Node.js package manager, needed for Bootstrap. Under Ubuntu installed with `sudo apt install npm`.
 * [Middleman](https://middlemanapp.com/). Installed with `sudo gem install middleman`.
 * **Apache2.** A web server. We need it just for serving static files, and of course you can install any webserver you like for that purpose.
@@ -65,37 +64,68 @@ The result is a fast web platform with dynamic content that has no or minimal po
     git push --set-upstream origin <branchname>
     ```
 
-4. **Install required packages.** To install all gem and npm libraries required by Middleman and the website project, execute the following.
+4. **Configure your Ruby version manager (if you use one).** You must do it at this point because otherwise you would install a `bundler` version globally on the system in the next step, which can severely mess things up if you *want* to use a Ruby version switching mechanism like `chruby`.
+
+    Now that [all major Ruby version managers understand `.ruby-version`](https://github.com/postmodern/chruby#auto-switching), configuring it simply means to create a file `.ruby-version` in the project root directory, with a string in it representing a Ruby version. In our case "`2.5.3`" or a higher version. Afterwards, check that your Ruby version manager has this as its chosen version now (in case of `chruby`: execute `chruby` while in the project root directory, and the output should contain a line like `* ruby-2.5.3` with your chosen version).
+
+5. **Log in as the system user that will run your software.** This is needed to not run `bundler` as root, which would make the installed bundle only accessible for the root user.
+
+6. **Install `bundler`.** Bundler is the Ruby dependency manager. Installation:
+
+    * If you don't use a Ruby version manager, just install the gem globally via `sudo gem install bundler`.
+    * If you do use a Ruby version manager, you (probably) want all your gems to be locally installed. In that case, even if you already have a globally installed `bundler` (see `which bundler`), you can install one into the `.gem/` directory of the current user by executing `gem install bundler`. It is however advisable to not have a globally installed `bundler` at the same time. It can only mess things up!
+
+7. **Install required gems.** To install all gem libraries required by Middleman and the website project, install the packages from inside inside the root folder of your project:
 
     ```
     cd /path/to/document/root/;
     bundle install;
-    npm install;
     ```
 
-    This will install the gems system-wide, which can be argued to be the "right" way to install libraries (namely, in a re-usable manner). For `npm` we'd like to do a similar thing, but `sudo npm install --global` just malfunctions, installing the stuff still into the local directory but with root file ownership and permissions. We'll get rid of using `npm` at all soon in this project, so let's ignore this issue for now. If you rather want to install the gems for your website only, execute:
+    If you use a Ruby version manager like `chruby`, this will install the gems into the `~/.gem/ruby/x.x.x/gems/` folder, so a local installation, which makes sense in this case. If you don't use a Ruby version manager, this will install the gems globally – which also makes sense in this case, as it installs libraries in the most re-usable manner. To force a local installation into the project directory in this case, you can do `bundle install --path vendor/bundle`.
+
+8. **Install required NodeJS packages.** Unfortunately, due to Bootstrap we currently have to also install various packages and tools via `npm`, but this will be fixed in the future. Here, a system-wide installation *should* be possible with `sudo npm install --global` but it did not work when I tried. So for this, I don't bother and just do a local installation as we'll remove all of NodeJS shortly anyway:
 
     ```
     cd /path/to/document/root/;
-    bundle install --path vendor/bundle;
     npm install;
     ```
 
-5. **Configure the Discourse API key.** The application uses a Discourse API key to obtain website content from topics in a category that should be access protected to not be confusing redundant content in addition to the website. Obtain a Discourse admin API key under "☰ → Admin → API → API" of your Discourse installation. Then create a file `.env` in the project root directory and put in your API key in the following format:
+9. **Configure the Discourse API key.** The application uses a Discourse API key to obtain website content from topics in a category that should be access protected to not be confusing redundant content in addition to the website. Obtain a Discourse admin API key under "☰ → Admin → API → API" of your Discourse installation. Then create a file `.env` in the project root directory and put in your API key in the following format:
 
     ```
     DISCOURSE_API_KEY=95a7f30ed63…
     ```
 
-6. **Configure the webserver.** At the minimum, create a new virtual host / website configuration and point its `DOCUMENT_ROOT` to the `build/` subdirectory of your copy of this repository.
-
-7. **Build and test.** Execute the following command in the repository's directory and check if the website is accessible afterwards.
+10. **Configure the webserver.** At the minimum, create a new virtual host / website configuration and point its `DOCUMENT_ROOT` to the `build/` subdirectory of your copy of this repository. In case of Apache2:
 
     ```
-    LC_ALL="en_US.UTF-8" bundle exec middleman build --verbose;
+    DocumentRoot /var/www/…/build
+
+    <Directory /var/www/…/build>
+      Options +FollowSymLinks
+      AllowOverride All
+      Require all granted
+    </Directory>
     ```
 
-8. **Configure deployment.** For automatic updates of the website when deployed on a server, you need a cron job that runs a deployment script (here `deploy.sh`) regularly, for example once per hour or once in 15 minutes, depending on how close to realtime you need the dynamic information on the site.
+11. **Configure file permissions.** A `git pull` will be executed during the build, which may create files in `.git/` and in your project directory. So make sure that all files in both directories are owned by the user who will execute the build.
+
+12. **Build and test.** Execute the following command in the repository's directory and check if the website is accessible afterwards.
+
+    ```
+    LC_ALL="en_US.UTF-8" bundle exec middleman build --verbose --clean;
+    ```
+
+13. **Start the development server.** You can use the above `middleman build` command to see changes you make during development, but it is much faster and simpler to see them via Middleman's internal web server. [Auto-reload](https://middlemanapp.com/basics/development-cycle/) of the browser page is already configured for this. Start the internal server with:
+
+    ```
+    LC_ALL="en_US.UTF-8" bundle exec middleman server;
+    ```
+
+    and then view the site at the URL you'll see in the output of that command.
+
+14. **Configure automatic deployment builds.** For automatic updates of the website when deployed on a server, you need a cron job that runs a deployment script (here `deploy.sh`) regularly, for example once per hour or once in 15 minutes, depending on how close to realtime you need the dynamic information on the site.
 
     Configuring cron jobs can be horrible if you need to provide certain environment for your command to run. For example, if you use `chruby` or another mechanism to select one of multiple installed Ruby versions, your `deploy.sh` depends on `$PATH` etc. changes as set up by that system. In the case of `chruby`, our `deploy.sh` had to look like this:
 
@@ -111,13 +141,15 @@ The result is a fast web platform with dynamic content that has no or minimal po
     # For now, we just assume to be on the right branch for our website. TODO: throw an error if not.
     git pull;
 
-    LC_ALL="en_US.UTF-8" bundle exec middleman build;
+    LC_ALL="en_US.UTF-8" bundle exec middleman build --clean;
     ```
     And our entry for the cron job in `/etc/crontab` had to be as follows:
 
     ```
     */15 * * * * username bash --login -c '/path/to/deploy.sh' >>/path/to/cron.log 2>>/path/to/cron_error.log
     ```
+
+    File `/path/to/cron_error.log` must exist and `username` must be a user in whose home directory (as listed in `/etc/passwd`) there is a `.gem/` directory with the gems you installed above via `bundle install`. Otherwise it may fall back on system-wide installed gems and then everything is messed up.
 
     For manual deployment on a local computer during development, you can create a simplified version of the above `deploy.sh`, usually only containing the `bundle exec middleman build` step.
 
