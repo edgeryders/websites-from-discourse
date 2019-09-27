@@ -156,7 +156,17 @@ The result is a fast web platform with dynamic content that has no or minimal po
 
 ## 3. Usage
 
-**Editing content.** Edit the relevant Discourse posts defined in the [mapping file](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml). It makes sense to place all this content into one Discourse category. We used the [Internet of Humans → Web Content](https://edgeryders.eu/c/ioh/web-content) sub-category. It is non-public to prevent redundant public content on the Internet (which may lead to user confusion and SEO penalties).
+**Editing content.** Edit the relevant Discourse posts defined in the [mapping file](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml). It makes sense to place all this content into one Discourse category. It can be made non-public to prevent redundant public content on the Internet (which may lead to user confusion and SEO penalties).
+
+When editing content, you can use all [standard Markdown syntax](https://daringfireball.net/projects/markdown/syntax), plus the following extensions, which are also supported by Discourse itself:
+
+* **Markdown inside HTML.** In Discourse, you can use Markdown inside HTML block-level tags. This is [not standard Markdown](https://daringfireball.net/projects/markdown/syntax#html), but supported here as well.
+
+In practice, the most important differences to how you'd write and format content in Discourse itself are the following:
+
+* **Images with `upload://` are not supported.** Instead, after uploading an image in the Discourse editor, convert it to `<img src="…" />` syntax using its absolute URL as shown in the editor's preview.
+
+* **HTML element attributes are supported.** In Discourse, HTML element attributes like `id` and `class` are stripped before rendering the output (with a few exceptions). In this framework, they are kept untouched. This allows you to include CSS formatting hints and even Bootstrap CSS classes inside your Discourse content.
 
 **Editing templates, i18n string translations or code.** These parts of the website are directly hosted inside this Github repository. Edit them with the usual pull/edit/commit/push git workflow. For small edits, you can also directly change the file using the Github web interface. Hints on where to edit what:
 
