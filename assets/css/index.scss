@@ -1,5 +1,5 @@
 body {
-  background-color: #003874;
+  background-color: #0f4e9e;
 }
 
 main {
@@ -34,11 +34,11 @@ a:not([href]):not([tabindex]) {
   }
 }
 
-.navbar-dark {
+.navbar-light {
   .nav-link {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -100,26 +100,20 @@ section#activity {
   }
 }
 
-.eit-partner-title {
+.partner-title {
   font-family: Arial, Calibri, Garamond, Trebuchet, Tahoma, Verdana;
   color: #074ea2;
   max-width: 150px;
   text-align: right;
 }
 
-.eit-logo img {
+.partner-logo img {
   width: 130px;
 }
 
-.eu-emblem-info {
-  font-family: Arial, Calibri, Garamond, Trebuchet, Tahoma, Verdana;
-  color: #074ea2;
-  max-width: 150px;
-  text-align: right;
-}
-
-.eu-emblem img {
-  width: 130px;
+.partner-info .small {
+  // Padding should conform to the gap in the two parts of the Climate-KIC logo, so in px.
+  padding-left: 17px;
 }
 
 .card-event {
