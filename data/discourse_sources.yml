@@ -1,3 +1,11 @@
-frontpage: 10781/1
-project: 10889/1
-about: 10892/1
+# Example data only. Not in live use here as we're not doing a i18n site here.
+
+home-page: 
+  en: [123, 1]
+  de: [123, 2]
+project-page:
+  en: [1234, 1]
+  de: [1234, 2]
+about-page:
+  en: [12345, 1]
+  de: [12345, 2]

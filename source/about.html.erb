@@ -1,4 +1,33 @@
+<section id="about-page" class="mt-5">
 
-<section id="pitch" class="mt-5">
-  <%= get_discourse_post(section: 'about') %>
+  <h3 id="team">Team &amp; Contact</h3>
+  <%#= get_discourse_json_post(topic_id: 10892, post_id: 1) %>
+
+  <% 
+    json_string = get_discourse_json_post(topic_id: 10892, post_id: 1) 
+    team_data = JSON.parse(json_string)
+  %>
+
+  <% team_data.each do |member| %>
+
+    <div class="card card-team-member mb-4">
+      <div class="row no-gutters">
+        <div class="col-md-4 d-flex flex-wrap align-items-center">
+          <% if member['photo_url'].present? %>
+            <img src="<%= member['photo_url'] %>" class="card-img">
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <% if member['name'].present? %>
+            <%= member['name'] %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+  <%= get_discourse_html_post(topic_id: 10902, post_id: 1) %>
+
+  <%= get_discourse_html_post(topic_id: 10902, post_id: 1) %>
 </section>
