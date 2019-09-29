@@ -189,6 +189,26 @@ In practice, the most important differences to how you'd write and format conten
 
 ## 4. Software architecture
 
+Major software technologies and components used, incl. documentation pointers:
+
+* **Ruby ≥2.5.3** Because Middleman is written in Ruby, we also use Ruby. Note that this is about pure Ruby code, without the Ruby on Rails framework. It fits nicely because Discourse itself is written in Ruby as well.
+
+* **Gem** The Ruby package management system.
+
+* **YARD** ([manual](https://www.rubydoc.info/gems/yard/file/docs/GettingStarted.md)) The most advanced Ruby code documentation system. A good Ruby IDE will pick up on these hints to provide better code completion etc.. Used together with Markdown inside YARD comments, which is [one of the options](https://www.rubydoc.info/gems/yard/file/docs/GettingStarted.md#Which_Markup_Format_).
+
+* **Middleman** ([manual](https://middlemanapp.com/basics/install/)) A static website framework written in Ruby.
+
+* **ERB Templates** ([manual](https://ruby-doc.org/stdlib-2.6.4/libdoc/erb/rdoc/ERB.html)) The templating language used in `.erb` files. The manual points to the latest available version, but you may have to adopt the `stdlib` version number according to your Ruby version.
+
+* **Markdown.** Like in Discourse, all content uses Markdown as the markup language. It is converted to HTML during the Middleman build process. The Markdown processing library in this application uses the [Kramdown](https://kramdown.gettalong.org/rdoc/Kramdown/Document.html) superset markup language, but better stay away from using the additional features.
+
+* **JSON** ([online editor](http://jsoneditoronline.org/)) A widely used data interchange format, incl. the default format returned for Discourse API calls. We also use as source code embedded into a Discourse post or right into a Middleman content source file to encode sub-structured content.
+
+* **Bootstrap 4.3.1** ([manual](https://getbootstrap.com/docs/4.3/)) A mature HTML+CSS template framework developed by Twitter.
+
+* **NPM** ([manual](https://docs.npmjs.com/cli/install)) Currently required because we obtain Bootstrap and its dependencies in this form. But we plan to remove this in the future, as one package management system (`gem`) must be enough.
+
 This website uses the static website framework [Middleman](https://middlemanapp.com/). However, unlike any "normal" Middleman based website, the website is automatically rebuilt in regular intervals (like, hourly) by a Middleman installation on the server. This allows to integrate dynamic content via API calls (if it does not need updates too often).
 
 For example, the `ngi-forward` branch integrates the following dynamic elements:
@@ -202,14 +222,6 @@ For example, the `ngi-forward` branch integrates the following dynamic elements:
 * **Events list.** Obtained from all Discourse topics in a certain category that have a date and time attached (via the [Discourse events plugin](https://meta.discourse.org/t/69776)). Each event is shown with date, time, thumbnail image, title and teaser of the main text.
 
 * **Other.** It is easily possible to embed any external content that can be accessed by API or simply via HTTP and that can be converted to the publishable form with some code. The result should be HTML with CSS and optionally JavaScript. For example, data visualizations such as [graphs about interactions on a Discourse forum](https://edgeryders.eu/t/10113) can be embedded in this way.
-
-Other major software technologies and components used:
-
-* **Bootstrap.** A mature HTML+CSS template framework developed by Twitter.
-
-* **Markdown.** Like in Discourse, all content uses Markdown as the markup language. It is converted to HTML during the Middleman build process.
-
-* **Ruby.** Because Middleman is written in Ruby, we also use Ruby. Note that this is about pure Ruby code, without the Ruby on Rails framework. It fits nicely because Discourse itself is written in Ruby as well.
 
 
 ## 5. Licence
