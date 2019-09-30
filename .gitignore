@@ -17,6 +17,7 @@ node_modules
 
 # IDE project configuration files.
 /.idea
+/.vscode
 
 # Output directory of the finished website.
 /build
