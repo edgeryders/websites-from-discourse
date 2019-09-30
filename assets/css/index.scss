@@ -1,15 +1,44 @@
+/* SECTION: Global custom styles */
+/***********************************************/
+
 body {
   background-color: #0f4e9e;
+}
+
+.navbar-light {
+  .nav-link {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+.page-header {
+  padding-bottom: 70px;
+
+  .page-header-content {
+    z-index: 100;
+    margin-top: -350px;
+    position: relative;
+  }
+
+  .page-header-title {
+    color: #fff;
+    width: 100%;
+    //padding: 0 15%;
+    text-align: center;
+  }
+
+
+  .page-header-details {
+    color: #fff;
+    padding: 3rem 2rem 0;
+  }
 }
 
 main {
   background-color: $light;
   min-height: 400px;
-}
-
-footer {
-  background: $light;
-  margin-top: 70px;
 }
 
 h2 {
@@ -34,65 +63,33 @@ a:not([href]):not([tabindex]) {
   }
 }
 
-.navbar-light {
-  .nav-link {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 16px;
+footer {
+  background: $light;
+  margin-top: 70px;
+
+  .logo-title {
+    font-family: Arial, Calibri, Garamond, Trebuchet, Tahoma, Verdana;
+    color: #074ea2;
+    max-width: 150px;
+    text-align: right;
+  }
+  
+  .logo-image img {
+    width: 130px;
+  }
+  
+  .logo-info .small {
+    // Padding should conform to the gap in the two parts of the Climate-KIC logo, so in px.
+    padding-left: 17px;
   }
 }
 
-.page-header {
-  padding-bottom: 70px;
-
-  #particles-js {
-    width: 100%;
-    height: 350px !important;
-  }
-
-  .page-header-content {
-    z-index: 100;
-    margin-top: -350px;
-    position: relative;
-  }
-
-  .page-header-title {
-    color: #fff;
-    width: 100%;
-    //padding: 0 15%;
-    text-align: center;
-  }
-
-
-  .page-header-details {
-    color: #fff;
-    padding: 3rem 2rem 0;
-  }
-}
+/* SECTION: Styles for "Home" */
+/***********************************************/
 
 #storyboard-carousel {
 
 }
-
-.card-partner {
-  width:100%;
-  .card-body {
-    min-height:100px;
-    a, img {
-      max-height: 80px;
-      max-width: 150px;
-      display: block;
-      margin: auto;
-    }
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .card-partner {
-    width: 240px;
-  }
-}
-
 
 section#activity {
   h2 {
@@ -100,36 +97,25 @@ section#activity {
   }
 }
 
-.partner-title {
-  font-family: Arial, Calibri, Garamond, Trebuchet, Tahoma, Verdana;
-  color: #074ea2;
-  max-width: 150px;
-  text-align: right;
-}
+/* SECTION: Styles for "The Project" */
+/***********************************************/
 
-.partner-logo img {
-  width: 130px;
-}
 
-.partner-info .small {
-  // Padding should conform to the gap in the two parts of the Climate-KIC logo, so in px.
-  padding-left: 17px;
-}
 
-.card-event {
+/* SECTION: Styles for "About" */
+/***********************************************/
+
+.card-teammember {
+  width:100%;
+
   .card-img {
+      display: block;
+      max-height: 250px;
+      max-width: 250px;
+      margin: auto;
   }
-}
 
-.card-stats {
-  h1 {
-    margin:0;
-    font-size: 3.5rem;
+  .card-body {
+    min-height: 100px;
   }
-}
-.btn-share-your-experience {
-  color: #fff;
-  padding: .8rem 2rem;
-  font-weight: 600;
-  font-size: 1.25rem;
 }
