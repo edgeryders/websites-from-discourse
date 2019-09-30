@@ -4,24 +4,32 @@
   <%#= get_discourse_json_post(topic_id: 10892, post_id: 1) %>
 
   <% 
-    json_string = get_discourse_json_post(topic_id: 10892, post_id: 1) 
-    team_data = JSON.parse(json_string)
+    team_data = get_team()
   %>
 
   <% team_data.each do |member| %>
 
-    <div class="card card-team-member mb-4">
+    <div class="card card-teammember mb-4">
       <div class="row no-gutters">
+
         <div class="col-md-4 d-flex flex-wrap align-items-center">
-          <% if member['photo_url'].present? %>
-            <img src="<%= member['photo_url'] %>" class="card-img">
-          <% end %>
+          <img src="<%= member['photo_url'] %>" class="card-img">
         </div>
+
         <div class="col-md-8">
-          <% if member['name'].present? %>
-            <%= member['name'] %>
-          <% end %>
+          <div class="card-body">
+
+            <h5 class="card-title"><%= member['name'] %> | <%= member['role'] %></h5>
+
+            <div class="card-text"><%= member['description'] %></div>
+            <div class="card-text">
+              <%= link_to member['email'], "mailto:#{member['email']}" %> |
+              <%= link_to "@#{member['username']} on Edgeryders", "https://edgeryders.eu/u/#{member['username']}" %>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </div>
 

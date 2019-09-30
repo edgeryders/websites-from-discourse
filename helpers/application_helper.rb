@@ -1,6 +1,7 @@
 require 'net/http'
 require 'json'
 require 'kramdown'
+require 'json-schema'
 
 module ApplicationHelper
 
@@ -70,6 +71,39 @@ module ApplicationHelper
       match[1]
     end
   end
+
+  # Get and return team member data from Discourse.
+  # 
+  # @return [Array] Array of hashes, one hash per teammember. All hashed are guaranteed to have 
+  #   these keys: `name`, `role`, `username`, `email`, `description`, `photo_url`.
+  #
+  # @todo Require "name" and "photo_url" to have non-empty values.
+  def get_team()
+    team_schema = {
+      "type" => "object",
+      "required" => ["name", "role", "username", "email", "description", "photo_url"],
+      "properties" => {
+        "name" => {"type" => "string"},
+        "role" => {"type" => "string"},
+        "username" => {"type" => "string"},
+        "email" => {"type" => "string"},
+        "description" => {"type" => "string"},
+        "photo_url" => {"type" => "string"}
+      }
+    }
+    
+    team_json = get_discourse_json_post(topic_id: 10892, post_id: 1) 
+    
+    begin
+      JSON::Validator.validate!(team_schema, team_json)
+    rescue JSON::Schema::ValidationError => e
+      e.message
+    end
+    
+    JSON.parse(team_json)
+  end
+
+    
 
   def get_json_data(url)
     uri = URI.parse(url)
