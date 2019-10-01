@@ -78,6 +78,8 @@ module ApplicationHelper
   #   these keys: `name`, `role`, `username`, `email`, `description`, `photo_url`.
   #
   # @todo Require "name" and "photo_url" to have non-empty values.
+  # @todo If validating the full JSON data fails, try to extract and return many team member 
+  #   records as possible that validate properly.
   def get_team()
     team_schema = {
       "type" => "object",
