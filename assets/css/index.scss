@@ -87,14 +87,17 @@ footer {
 /* SECTION: Styles for "Home" */
 /***********************************************/
 
-#storyboard-carousel {
-
-}
-
 section#activity {
   h2 {
     margin-top: 0;
   }
+}
+
+#slides {
+  /* "Scale width proportionally so that height is a bit less than 100% of viewport height."
+     Because with 4:3 slides, a width of 125%vh results in a height of 120%/4*3 = 90%vh. */
+  max-width: 120vh;
+  margin: auto;
 }
 
 /* SECTION: Styles for "The Project" */

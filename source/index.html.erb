@@ -16,25 +16,25 @@
 <section id="how_it_works" class="mt-5">
   <%#= get_discourse_post(section: 'how_it_works') %>
 
-  <% slides = %w[01 02 03 04 05 06] %>
-  <div id="storyboard-carousel" class="carousel slide" data-ride="carousel">
+  <% slides = %w[01 02 03 04 05] %>
+  <div id="slides" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <% slides.each do |s| %>
-        <li data-target="#storyboard-carousel" data-slide-to="<%= s.to_i %>" class="<%= 'active' if s == slides.first %>"></li>
+        <li data-target="#slides" data-slide-to="<%= s.to_i %>" class="<%= 'active' if s == slides.first %>"></li>
       <% end %>
     </ol>
     <div class="carousel-inner">
       <% slides.each do |s| %>
         <div class="carousel-item <%= 'active' if s == slides.first %>">
-          <%= image_tag "storyboard-slide-#{s}.png", class: 'd-block w-100' %>
+          <%= image_tag "storyboard-slide-#{s}.jpg", class: 'd-block w-100' %>
         </div>
       <% end %>
     </div>
-    <a class="carousel-control-prev" href="#storyboard-carousel" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#storyboard-carousel" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
