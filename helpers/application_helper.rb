@@ -77,6 +77,7 @@ module ApplicationHelper
   # @return [Array] Array of hashes, one hash per teammember. All hashed are guaranteed to have 
   #   these keys: `name`, `role`, `username`, `email`, `description`, `photo_url`.
   #
+  # @todo Pass in topic ID and post number as parameters.
   # @todo Require "name" and "photo_url" to have non-empty values.
   # @todo If validating the full JSON data fails, try to extract and return many team member 
   #   records as possible that validate properly.
@@ -94,7 +95,7 @@ module ApplicationHelper
       }
     }
     
-    team_json = get_discourse_json_post(topic_id: 10892, post_id: 1) 
+    team_json = get_discourse_json_post(topic_id: 11088, post_id: 2)
     
     begin
       JSON::Validator.validate!(team_schema, team_json)
