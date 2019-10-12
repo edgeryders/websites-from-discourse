@@ -1,12 +1,18 @@
 # Environment variables, which can include sensitive information (DISCOURSE_API_KEY).
 .env
 
+# Ruby environment configuration files.
+.ruby-version
+
 # Gem packages as installed during the last run of "bundle install".
 /Gemfile.lock
 
 # NPM package list and packages, as installed during the last run of "npm install".
 /package-lock.json
 node_modules
+
+# HTTP Basic Auth configuration file.
+.htpasswd
 
 # IDE configuration files.
 /.idea
@@ -22,3 +28,7 @@ node_modules
 /.tmp
 
 *.log
+
+# Accessory files and directories in webhosting environments.
+/error
+/stats
