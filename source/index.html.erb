@@ -1,20 +1,24 @@
-<%# Enable to create an intro section before the main content section. %>
-<%# content_for :page_header do %>
-  <%#= partial "intro" %>
-<%# end %>
+<% ignore do # (TEMPORARILY DISABLED SECTION) %>
+<%# Intro section before the main content %>
+<% content_for :page_header do %>
+  <%= partial "intro" %>
+<% end %>
+<% end %>
 
 <section id="home-page" class="mt-5">
   <%= get_discourse_html_post(topic_id: 11086, post_id: 2) %>
 </section>
 
+<% ignore do # (TEMPORARILY DISABLED SECTION) %>
 <section id="activity" class="mt-5">
-  <h2><%#= t('index.activity_heading') %></h2>
+  <h2><%= t('index.activity_heading') %></h2>
 
-  <%#= partial 'table_activities', locals: { json_data: get_most_recent_topics} %>
+  <%= partial 'table_activities', locals: { json_data: get_most_recent_topics} %>
 </section>
+<% end %>
 
-<section id="how_it_works" class="mt-5">
-  <%#= get_discourse_post(section: 'how_it_works') %>
+<% ignore do # (TEMPORARILY DISABLED SECTION) %>
+<section id="slideshow" class="mt-5">
 
   <% slides = %w[01 02 03 04 05] %>
   <div id="slides" class="carousel slide" data-ride="carousel">
@@ -40,3 +44,4 @@
     </a>
   </div>
 </section>
+<% end %>
