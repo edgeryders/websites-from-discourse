@@ -156,17 +156,18 @@ The result is a fast web platform with dynamic content that has no or minimal po
 
 ## 3. Usage
 
-**Editing content.** Edit the relevant Discourse posts defined in the [mapping file](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml). It makes sense to place all this content into one Discourse category. It can be made non-public to prevent redundant public content on the Internet (which may lead to user confusion and SEO penalties).
+**Editing website content.** Edit the relevant Discourse posts defined in the [mapping file](https://github.com/edgeryders/ngi-forward-platform/blob/master/data/discourse_sources.yml). It makes sense to place all this content into one Discourse category. It can be made non-public to prevent redundant public content on the Internet (which may lead to user confusion and SEO penalties).
 
-When editing content, you can use all [standard Markdown syntax](https://daringfireball.net/projects/markdown/syntax), plus the following extensions, which are also supported by Discourse itself:
+When editing content, you can use all [standard Markdown syntax](https://daringfireball.net/projects/markdown/syntax). Any notable differences from either standard Markdown or the Markdown used in Discourse are listed below::
 
 * **Markdown inside HTML.** In Discourse, you can use Markdown inside HTML block-level tags. This is [not standard Markdown](https://daringfireball.net/projects/markdown/syntax#html), but supported here as well.
 
-In practice, the most important differences to how you'd write and format content in Discourse itself are the following:
-
-* **Images with `upload://` are not supported.** Instead, after uploading an image in the Discourse editor, convert it to `<img src="…" />` syntax using its absolute URL as shown in the editor's preview.
-
 * **HTML element attributes are supported.** In Discourse, HTML element attributes like `id` and `class` are stripped before rendering the output (with a few exceptions). In this framework, they are kept untouched. This allows you to include CSS formatting hints and even Bootstrap CSS classes inside your Discourse content.
+
+* **No `upload://` URLs.** Discourse uses these URLs for uploaded images, but they are not yet supported here. Replace them with the regular URL that you can copy out of the Discourse editor's preview pane with "Copy image address" from the context menu.
+
+* **No image sizing.** Use `![Image Title](https://example.com/img.jpg)` as the Syntax for images. Discourse uses extended syntax to provide the image size, for example `![Image Title|100x100](https://example.com/img.jpg)`. This is not yet supported and would be converted to a two-column table (!) if encountered.
+
 
 **Editing templates, i18n string translations or code.** These parts of the website are directly hosted inside this Github repository. Edit them with the usual pull/edit/commit/push git workflow. For small edits, you can also directly change the file using the Github web interface. Hints on where to edit what:
 
@@ -177,6 +178,7 @@ In practice, the most important differences to how you'd write and format conten
 * **CSS overrides and additions.** See `assets/css/index.scss`. Everything you want to look different from standard Bootstrap should go here.
 
 * **Discourse content sources.** See `data/discourse_sources.yml`.
+
 
 **Rebuilding the site.** If set up as instructed above, on a sever the website will rebuild itself automatically at every cron job run, which includes updating the repository from Github, all content and all other dynamic elements. When you are editing the site and want to see the results immediately, on a server you can also execute the cron job script manually:
 
