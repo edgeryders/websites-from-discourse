@@ -2,37 +2,14 @@
 /***********************************************/
 
 body {
-  background-color: #0f4e9e;
+  background-color: scale-color($primary, $lightness: -20%);
 }
 
 .navbar-light {
   .nav-link {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 16px;
-  }
-}
-
-.page-header {
-  padding-bottom: 70px;
-
-  .page-header-content {
-    z-index: 100;
-    margin-top: -350px;
-    position: relative;
-  }
-
-  .page-header-title {
-    color: #fff;
-    width: 100%;
-    //padding: 0 15%;
-    text-align: center;
-  }
-
-
-  .page-header-details {
-    color: #fff;
-    padding: 3rem 2rem 0;
+    font-size: 1.3rem;
   }
 }
 
@@ -46,14 +23,14 @@ h2 {
   margin: 90px 0 35px;
   text-align: center;
   font-weight: 600;
-  color: #3C3850;
+  color: $primary;
   position: relative;
 }
 
 h3 {
   text-transform: uppercase;
   margin-top: 4rem;
-  color: #CB4761;
+  color: $secondary;
 }
 
 a:not([href]):not([tabindex]) {
@@ -81,6 +58,35 @@ footer {
   .logo-info .small {
     // Padding should conform to the gap in the two parts of the Climate-KIC logo, so in px.
     padding-left: 17px;
+  }
+}
+
+/* SECTION: Styles for the frontpage's top element, before the main content */
+/***********************************************/
+
+.page-header {
+  min-height: 35rem;
+
+  background-image: url(/assets/images/illustration-04.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+  .page-header-overlay { 
+    width: 100%;
+    background-color: rgba($light, 0.65);
+  }
+
+  .page-header-title {
+    color: $primary;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  .page-header-details {
+    color: #2c2a2b;
   }
 }
 

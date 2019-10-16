@@ -1,7 +1,7 @@
-<%# Enable to create an intro section before the main content section. %>
-<%# content_for :page_header do %>
-  <%#= partial "intro" %>
-<%# end %>
+<%# Intro section with full-width image before the main content section. %>
+<% content_for :page_header do %>
+  <%= partial "intro" %>
+<% end %>
 
 <section id="home-page" class="mt-5">
   <%= get_discourse_html_post(topic_id: 10781, post_id: 1) %>

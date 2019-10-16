@@ -123,3 +123,9 @@ module ApplicationHelper
   end
 
 end
+
+# Ignore / disable the ERB code block that is passed to mute() as a yield block via 
+# `<% ignore do %> … <% end %>`. This is a solution to disable multiline ERB code sections 
+# consisting of mixed Ruby and HTML. Inspired by https://stackoverflow.com/a/24131080
+def ignore
+end
