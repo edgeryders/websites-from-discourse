@@ -1,16 +1,28 @@
 <%# Intro section with full-width image before the main content section. %>
 <% content_for :page_header do %>
-  <%= partial "intro" %>
+  <div class="page-header">
+    <div class="page-header-overlay">
+
+      <div class="page-header-content container pt-5 pb-2 pb-md-4">
+        <h1 class="page-header-title px-3 px-md-5">
+          Green, beautiful spaces for the 99%
+        </h1>
+
+        <div class="page-header-details">
+          <div class="lead">
+          The Reef is a new kind of living space. It uses the power of community to help 
+          people transition to a happier, healthier, greener, more social lifestyle.
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
 <% end %>
 
 <section id="home-page" class="mt-5">
   <%= get_discourse_html_post(topic_id: 10781, post_id: 1) %>
-</section>
-
-<section id="activity" class="mt-5">
-  <h2><%#= t('index.activity_heading') %></h2>
-
-  <%#= partial 'table_activities', locals: { json_data: get_most_recent_topics} %>
 </section>
 
 <section id="how_it_works" class="mt-5">

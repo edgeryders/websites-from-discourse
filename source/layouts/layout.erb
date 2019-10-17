@@ -19,9 +19,9 @@
 
 <%# Page block rendered directly on the page background, outside the main content area.
     Only present if defined by a page via "content_for :page_header". %>
-<%= yield_content :page_header  %>
+<%= yield_content :page_header %>
 
-<main role="main" class="container mt-5">
+<main role="main" class="container mt-5 <%= yield_content :main_classes %>">
   <div class="p-4 pb-5">
     <%# Main content of the page to which this layout is applied. %>
     <%= yield :content %>

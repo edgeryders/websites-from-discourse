@@ -18,6 +18,33 @@ main {
   min-height: 400px;
 }
 
+// Background images, usually applied to element "main".
+[class*="bg-illustration-"] {
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% auto;
+}
+.bg-illustration-1 {
+  background-image: url(/assets/images/illustration-01.jpg);
+}
+.bg-illustration-2 {
+  background-image: url(/assets/images/illustration-02.jpg);
+}
+.bg-illustration-3 {
+  background-image: url(/assets/images/illustration-03.jpg);
+
+  /* We want the background graphic visible at the bottom with no text overlay. As we 
+   * know the graphic width is always ~95% of the viewport and the area to keep without 
+   * text is almost square, we can use viewport-relative percentage units. */
+  padding-bottom: 90vw;
+}
+.bg-illustration-4 {
+  background-image: url(/assets/images/illustration-04.jpg);
+}
+.bg-illustration-5 {
+  background-image: url(/assets/images/illustration-05.jpg);
+}
+
 h2 {
   font-size: 3rem;
   margin: 90px 0 35px;
