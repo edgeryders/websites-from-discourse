@@ -19,30 +19,28 @@ main {
 }
 
 // Background images, usually applied to element "main".
-[class*="bg-illustration-"] {
+[class*="illustration-page-"] {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% auto;
 }
-.bg-illustration-1 {
-  background-image: url(/assets/images/illustration-01.jpg);
+.illustration-page-01 {
+  background-image: url(/assets/images/illustration-page-01.jpg);
 }
-.bg-illustration-2 {
-  background-image: url(/assets/images/illustration-02.jpg);
+.illustration-page-02 {
+  background-image: url(/assets/images/illustration-page-02.jpg);
 }
-.bg-illustration-3 {
-  background-image: url(/assets/images/illustration-03.jpg);
+.illustration-page-03 {
+  background-image: url(/assets/images/illustration-page-03.jpg);
 
-  /* We want the background graphic visible at the bottom with no text overlay. As we 
-   * know the graphic width is always ~95% of the viewport and the area to keep without 
-   * text is almost square, we can use viewport-relative percentage units. */
-  padding-bottom: 90vw;
+  /* We want this background graphic visible at the bottom with no text overlay. As we 
+   * know the graphic width is always ~95% of the viewport and it has a 1920:1104 ratio, 
+   * we can express the reserved vertical space in viewport-relative percentage units:
+   * 95% / 1920 * 1104 = 55%. Bit less as the graphic's upper part is a gradient. */
+  padding-bottom: 50vw;
 }
-.bg-illustration-4 {
-  background-image: url(/assets/images/illustration-04.jpg);
-}
-.bg-illustration-5 {
-  background-image: url(/assets/images/illustration-05.jpg);
+.illustration-page-04 {
+  background-image: url(/assets/images/illustration-page-04.jpg);
 }
 
 h2 {
@@ -94,7 +92,7 @@ footer {
 .page-header {
   min-height: 35rem;
 
-  background-image: url(/assets/images/illustration-04.jpg);
+  background-image: url(/assets/images/illustration-frontpage.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
