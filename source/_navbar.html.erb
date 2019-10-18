@@ -22,8 +22,14 @@
           <%= link_to 'Join Us!', '/project#join', class: 'dropdown-item' %>
         </div>
       </li>
-      <li class="nav-item mr-3">
-        <%= link_to 'Events', '/events', class: 'nav-link' %>
+      <li class="nav-item dropdown mr-3">
+        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to '1st Community Workshop', '/events#oct24', class: 'dropdown-item' %>
+          <%= link_to '2nd Community Workshop', '/events#nov14', class: 'dropdown-item' %>
+          <%= link_to '3rd Community Workshop', '/events#nov28', class: 'dropdown-item' %>
+          <%= link_to 'Technical Sprint', '/events#nov25', class: 'dropdown-item' %>
+        </div>
       </li>
       <li class="nav-item dropdown mr-3">
         <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>

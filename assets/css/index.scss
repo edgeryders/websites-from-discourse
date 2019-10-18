@@ -43,19 +43,26 @@ main {
   background-image: url(/assets/images/illustration-page-04.jpg);
 }
 
-h2 {
-  font-size: 3rem;
-  margin: 90px 0 35px;
-  text-align: center;
-  font-weight: 600;
+h1 {
   color: $primary;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 
-h3 {
+h2 {
+  color: $secondary;
   text-transform: uppercase;
   margin-top: 4rem;
-  color: $secondary;
+}
+
+h3 {
+  color: $tertiary;
+  font-size: 1.6rem;
+  margin-top: 2rem;
 }
 
 a:not([href]):not([tabindex]) {
@@ -103,15 +110,12 @@ footer {
   }
 
   .page-header-title {
-    color: $primary;
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 600;
+    margin-top: 1.7rem;
+    margin-bottom: 0.8rem;
   }
 
   .page-header-details {
-    color: #2c2a2b;
+    color: $purple;
   }
 }
 
