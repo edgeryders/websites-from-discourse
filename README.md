@@ -160,9 +160,11 @@ The result is a fast web platform with dynamic content that has no or minimal po
 
 When editing content, you can use all [standard Markdown syntax](https://daringfireball.net/projects/markdown/syntax). Any notable differences from either standard Markdown or the Markdown used in Discourse are listed below::
 
-* **Markdown inside HTML.** In Discourse, you can use Markdown inside HTML block-level tags. This is [not standard Markdown](https://daringfireball.net/projects/markdown/syntax#html), but supported here as well.
+* **Support for Markdown inside HTML.** In Discourse, you can use Markdown inside HTML block-level tags. This is [not standard Markdown](https://daringfireball.net/projects/markdown/syntax#html), but supported here as well.
 
-* **HTML element attributes are supported.** In Discourse, HTML element attributes like `id` and `class` are stripped before rendering the output (with a few exceptions). In this framework, they are kept untouched. This allows you to include CSS formatting hints and even Bootstrap CSS classes inside your Discourse content.
+* **Support for HTML attributes.** In Discourse, HTML element attributes like `id` and `class` are stripped before rendering the output (with a few exceptions). In this framework, they are kept untouched. This allows you to include CSS formatting hints and even Bootstrap CSS classes inside your Discourse content.
+
+* **No auto-linking.** Currently, raw URLs and e-mail addresses will not be linked automatically, so place a hyperlink on them manually. We'll [add autolinking](https://github.com/edgeryders/websites-from-discourse/issues/55) later.
 
 * **No `upload://` URLs.** Discourse uses these URLs for uploaded images, but they are not yet supported here. Replace them with the regular URL that you can copy out of the Discourse editor's preview pane with "Copy image address" from the context menu.
 
