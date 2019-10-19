@@ -34,16 +34,17 @@ $grays: map-merge(
                 $grays
 );
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffdb6a !default;
-$green:   #28a745 !default;
-$teal:    #009c8e !default;
-$cyan:    #3fbcbe !default;
+// All colors based on the Sci-Fi Economics Lab main illustration (visual-frontpage.jpg).
+$blue:    #5688b1 !default;
+$indigo:  #0e78ce !default;
+$purple:  #9552a4 !default;
+$pink:    #914979 !default;
+$red:     #e1311e !default;
+$orange:  #b18658 !default;
+$yellow:  #fad0a6 !default;
+$green:   #85b189 !default;
+$teal:    #796d3c !default;
+$cyan:    #4dc4ee !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -67,7 +68,8 @@ $colors: map-merge(
 );
 
 $primary:       $blue !default;
-$secondary:     $gray-200 !default;
+$secondary:     $green !default;
+$tertiary:      $orange !default;
 $success:       $green !default;
 $info:          $teal !default;
 $warning:       $yellow !default;
