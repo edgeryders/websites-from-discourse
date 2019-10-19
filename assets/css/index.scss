@@ -2,37 +2,14 @@
 /***********************************************/
 
 body {
-  background-color: #0f4e9e;
+  background-color: $blue;
 }
 
 .navbar-light {
   .nav-link {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 16px;
-  }
-}
-
-.page-header {
-  padding-bottom: 70px;
-
-  .page-header-content {
-    z-index: 100;
-    margin-top: -350px;
-    position: relative;
-  }
-
-  .page-header-title {
-    color: #fff;
-    width: 100%;
-    //padding: 0 15%;
-    text-align: center;
-  }
-
-
-  .page-header-details {
-    color: #fff;
-    padding: 3rem 2rem 0;
+    font-size: 1.3rem;
   }
 }
 
@@ -41,19 +18,29 @@ main {
   min-height: 400px;
 }
 
-h2 {
-  font-size: 3rem;
-  margin: 90px 0 35px;
+h1 {
+  color: $primary;
+  font-size: 3.5rem;
+  font-weight: 700;
   text-align: center;
-  font-weight: 600;
-  color: #3C3850;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 
-h3 {
+h2 {
+  color: $secondary;
+  font-size: 2.3rem;
+  font-weight: 600;
   text-transform: uppercase;
   margin-top: 4rem;
-  color: #CB4761;
+}
+
+h3 {
+  color: $tertiary;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2rem;
 }
 
 a:not([href]):not([tabindex]) {
@@ -84,6 +71,32 @@ footer {
   }
 }
 
+/* SECTION: Styles for the frontpage's top element, before the main content */
+/***********************************************/
+
+.page-header {
+  min-height: 70vh;
+
+  background-image: url(/assets/images/visual-frontpage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+  .page-header-overlay { 
+    width: 100%;
+    background-color: rgba($light, 0.65);
+  }
+
+  .page-header-title {
+    margin-top: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .page-header-details {
+    color: $purple;
+  }
+}
+
 /* SECTION: Styles for "Home" */
 /***********************************************/
 
@@ -100,9 +113,37 @@ section#activity {
   margin: auto;
 }
 
-/* SECTION: Styles for "The Project" */
+/* SECTION: Styles for "The Event" */
 /***********************************************/
 
+// Interstitial graphics in pseudo-elements, allowing to sneak them into content 
+// imported from Discourse.
+h2#tickets, h2#backstory {
+  margin-top: 0;
+
+  &:before {
+    content: " "; // Content is needed for a :before element to show at all.
+  
+    display: block;
+    width: 100%;
+  
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
+  }
+}
+h2#tickets:before {
+  background-image: url(/assets/images/visual-interstitial-1.png);
+  min-height: 11vw;
+}
+h2#backstory:before {
+  background-image: url(/assets/images/visual-interstitial-2.png);
+  min-height: 11vw;
+  margin-bottom: 1rem;
+}
+
+/* SECTION: Styles for "Call for Co-Authors" */
+/***********************************************/
 
 
 /* SECTION: Styles for "About" */

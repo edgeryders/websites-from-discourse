@@ -1,10 +1,10 @@
 <section id="about-page" class="mt-5">
 
-  <h2 id="about">About</h2>
+  <h1 id="about">About</h1>>
 
   <!-- SECTION: Team & Contact -->
 
-  <h3 id="team">Team &amp; Contact</h3>
+  <h2 id="team">Team &amp; Contact</h2>
 
   <% team_data = get_team() %>
   <% team_data.each do |member| %>
@@ -37,13 +37,13 @@
 
   <!-- SECTION: Privacy & Consent -->
 
-  <h3 id="privacy">Privacy & Consent</h3>
+  <h2 id="privacy">Privacy & Consent</h2>
 
   <%= get_discourse_html_post(topic_id: 11089, post_id: 2) %>
 
   <!-- SECTION: Legal Information -->
 
-  <h3 id="legals">Legal Information</h3>
+  <h2 id="legals">Legal Information</h2>
 
   <%= get_discourse_html_post(topic_id: 11090, post_id: 2) %>
 </section>
