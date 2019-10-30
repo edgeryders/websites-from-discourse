@@ -1,0 +1,3 @@
+Redirect 302 /call               /#call
+Redirect 302 /event              /#event
+Redirect 302 /about              /imprint
