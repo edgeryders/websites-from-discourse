@@ -35,7 +35,7 @@ $grays: map-merge(
 );
 
 // All colors based on the Sci-Fi Economics Lab main illustration (visual-frontpage.jpg).
-$blue:    #5688b1 !default;
+$blue:    #59C8EE !default;
 $indigo:  #0e78ce !default;
 $purple:  #9552a4 !default;
 $pink:    #914979 !default;
@@ -69,10 +69,10 @@ $colors: map-merge(
 
 $primary:       $blue !default;
 $secondary:     $green !default;
-$tertiary:      $orange !default;
+$tertiary:      $yellow !default;
 $success:       $green !default;
 $info:          $teal !default;
-$warning:       $yellow !default;
+$warning:       $orange !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
@@ -163,16 +163,16 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-bg:                   #1B2A34 !default;
+$body-color:                $white !default;
 
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                              darken(theme-color("primary"), 5%) !default;
-$link-decoration:                         none !default;
+$link-color:                              $body-color !default;
+$link-decoration:                         underline !default;
 $link-hover-color:                        theme-color("primary") !default;
 $link-hover-decoration:                   underline !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
@@ -272,7 +272,7 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case

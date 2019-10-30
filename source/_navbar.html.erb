@@ -1,34 +1,26 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <%= image_tag 'sfeconlab-logo.png', height: '80px' %>
+<nav class="navbar navbar-dark navbar-expand-md">
+
+  <a class="navbar-brand" href="/">
+    <%= image_tag 'sfeconlab-logo.png' %>
   </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarCollapse">
+
     <ul class="navbar-nav mr-auto">
       <li class="nav-item mr-3">
-        <%= link_to 'Home', '/', class: 'nav-link' %>
-      </li>
-      <li class="nav-item dropdown mr-3">
-        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Event</a>
-        <div class="dropdown-menu dropdown-menu-right">
-          <%= link_to 'Who, When, Where', '/event#essentials', class: 'dropdown-item' %>
-          <%= link_to 'Tickets & Perks', '/event#tickets', class: 'dropdown-item' %>
-          <%= link_to 'Backstory', '/event#backstory', class: 'dropdown-item' %>
-        </div>
+        <%= link_to 'Event', '/#event', class: 'nav-link' %>
       </li>
       <li class="nav-item mr-3">
-        <%= link_to 'Call for Co-Authors', '/call', class: 'nav-link' %>
+        <%= link_to 'Call for Co-Authors', '/#call', class: 'nav-link' %>
       </li>
-      <li class="nav-item dropdown mr-3">
-        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-        <div class="dropdown-menu dropdown-menu-right">
-          <%= link_to 'Team & Contact', '/about#team', class: 'dropdown-item' %>
-          <%= link_to 'Privacy & Consent', '/about#privacy', class: 'dropdown-item' %>
-          <%= link_to 'Legal Information', '/about#legals', class: 'dropdown-item' %>
-        </div>
+      <li class="nav-item mr-3">
+        <%= link_to 'About Us', '/#edgeryders', class: 'nav-link' %>
       </li>
     </ul>
 

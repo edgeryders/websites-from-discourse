@@ -1,46 +1,75 @@
 /* SECTION: Global custom styles */
 /***********************************************/
 
-body {
-  background-color: $blue;
-}
-
-.navbar-light {
-  .nav-link {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.3rem;
-  }
-}
-
 main {
-  background-color: $light;
-  min-height: 400px;
+  min-height: 100vh;
+}
+
+/* NOTE: .section-bg-* vertical paddings are needed to not let the body background become visible when 
+   the text content employs margins at the very beginning or very end. Now the margins will reach up to 
+   the padding, not to the next element. */
+
+[class^=section-bg-] {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.section-bg-1 {
+  background-color: rgba(40, 25, 14, 0.7);
+}
+
+.section-bg-2 {
+  background-color: #15B097;
+}
+
+.section-bg-3 {
+  background-color: #118E7A;
+}
+
+.section-bg-4 {
+  background-color: #33658A;
+}
+
+.section-bg-5 {
+  background-color: #2F4858;
+}
+
+.section-bg-6 {
+  background-color: #1B2A34;
 }
 
 h1 {
   color: $primary;
+  font-family: "Roboto Slab";
   font-size: 3.5rem;
-  font-weight: 700;
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   position: relative;
 }
 
 h2 {
   color: $secondary;
+  font-family: "Roboto Slab";
+  font-weight: bold;
   font-size: 2.3rem;
-  font-weight: 600;
   text-transform: uppercase;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 h3 {
   color: $tertiary;
+  font-family: "Roboto Slab";
+  font-weight: bold;
   font-size: 1.6rem;
-  font-weight: 600;
-  margin-top: 2rem;
+  margin-top: 1.3rem;
+}
+
+h4 {
+  color: $white;
+  font-family: "Roboto Slab";
+  font-size: 1.3rem;
+  margin-top: 1.1rem;
 }
 
 a:not([href]):not([tabindex]) {
@@ -50,37 +79,34 @@ a:not([href]):not([tabindex]) {
   }
 }
 
-footer {
-  background: $light;
-  margin-top: 70px;
+/* SECTION: page header styles */
+/***********************************************/
 
-  .logo-title {
-    font-family: Arial, Calibri, Garamond, Trebuchet, Tahoma, Verdana;
-    color: #074ea2;
-    max-width: 150px;
-    text-align: right;
+.navbar {
+  .nav-link {
+    font-family: "Montserrat";
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: white;
   }
-  
-  .logo-image img {
-    width: 130px;
-  }
-  
-  .logo-info .small {
-    // Padding should conform to the gap in the two parts of the Climate-KIC logo, so in px.
-    padding-left: 17px;
+
+  .navbar-brand {
+    max-width: 25%;
+    margin-right: 3rem;
+
+    img { width: 100%; }
   }
 }
 
-/* SECTION: Styles for the frontpage's top element, before the main content */
-/***********************************************/
-
 .page-header {
-  min-height: 70vh;
+  min-height: 100vh;
 
   background-image: url(/assets/images/visual-frontpage.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
 
   .page-header-overlay { 
     width: 100%;
@@ -97,23 +123,7 @@ footer {
   }
 }
 
-/* SECTION: Styles for "Home" */
-/***********************************************/
-
-section#activity {
-  h2 {
-    margin-top: 0;
-  }
-}
-
-#slides {
-  /* "Scale width proportionally so that height is a bit less than 100% of viewport height."
-     Because with 4:3 slides, a width of 125%vh results in a height of 120%/4*3 = 90%vh. */
-  max-width: 120vh;
-  margin: auto;
-}
-
-/* SECTION: Styles for "The Event" */
+/* SECTION: "Event" styles */
 /***********************************************/
 
 // Interstitial graphics in pseudo-elements, allowing to sneak them into content 
@@ -142,12 +152,16 @@ h2#backstory:before {
   margin-bottom: 1rem;
 }
 
-/* SECTION: Styles for "Call for Co-Authors" */
+/* SECTION: "Call for Co-Authors" styles */
 /***********************************************/
 
 
-/* SECTION: Styles for "About" */
+/* SECTION: "Team" styles */
 /***********************************************/
+
+#team .card {
+  background-color: unset;
+}
 
 .card-teammember {
   width:100%;
@@ -161,5 +175,27 @@ h2#backstory:before {
 
   .card-body {
     min-height: 100px;
+  }
+}
+
+/* SECTION: page footer styles */
+/***********************************************/
+
+footer {
+
+  .logo-title {
+    font-family: Arial, Calibri, Garamond, Trebuchet, Tahoma, Verdana;
+    color: #074ea2;
+    max-width: 150px;
+    text-align: right;
+  }
+  
+  .logo-image img {
+    width: 130px;
+  }
+  
+  .logo-info div {
+    // Padding must conform to the gap in the two parts of the Climate-KIC logo, so in px.
+    padding-left: 17px;
   }
 }
