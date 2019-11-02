@@ -94,7 +94,7 @@ module ApplicationHelper
       }
     }
     
-    team_json = get_discourse_json_post(topic_id: 10892, post_id: 1) 
+    team_json = get_discourse_json_post(topic_id: 11338, post_id: 2)
     
     begin
       JSON::Validator.validate!(team_schema, team_json)

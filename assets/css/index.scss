@@ -128,10 +128,13 @@ section#activity {
   }
 }
 
-#slides {
-  /* "Scale width proportionally so that height is a bit less than 100% of viewport height."
-     Because with 4:3 slides, a width of 125%vh results in a height of 120%/4*3 = 90%vh. */
-  max-width: 120vh;
+section#slides {
+  /* Scale the slide size proportionally so that their height is a bit less than the viewport. Because with our
+     1200x628 slides, this follows from: 1200 px / 628 px = x%vh / 90% vh <=> x = 1200 px / 629 px * 90%vh = 172% vh. */
+  /* TODO: Apply this rule as "max-height: 90vh" and let the width scale proportionally. That would be more intuitive 
+     But so far fails due to relative positiong of contained elements etc..*/
+  max-width: calc(1200 / 629 * 90vh);
+
   margin: auto;
 }
 
