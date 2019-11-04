@@ -1,52 +1,159 @@
-<%# Intro section with full-width image before the main content section. %>
-<% content_for :page_header do %>
-  <div class="page-header">
-    <div class="page-header-overlay">
+<%# HEADER: Full-width image before the main content section, and CSS for that. %>
+<% content_for(:page_header_bg) {"page-header-bg-2"} %>
+<% content_for :page_header_overlay do %>
 
-      <div class="page-header-content container pt-5 pb-2 pb-md-4">
-        <h1 class="page-header-title px-3 px-md-5">
-          Green, beautiful spaces for the 99%
-        </h1>
+  <%# A site title and subtitle. %>
+  <div class="page-header-overlay">
 
-        <div class="page-header-details">
-          <div class="lead">
-          The Reef is a new kind of living space. It uses the power of community to help 
-          people transition to a happier, healthier, greener, more social lifestyle.
-          </div>
-        </div>
-        
+    <div class="page-header-content container pt-5 pb-2 pb-md-4">
+      <div class="page-header-title">
+        Green, beautiful<br class="d-none d-md-inline"/>
+        spaces <strong>for the 99%</strong>
       </div>
 
+      <div class="page-header-details">
+        <p>The Reef is a new kind of living space. Made for a happier, healthier, 
+          greener and more social lifestyle.</p>
+      </div>
+      
     </div>
+
   </div>
 <% end %>
 
-<section id="home-page" class="mt-5">
-  <%= get_discourse_html_post(topic_id: 11340, post_id: 2) %>
-</section>
+<%# SECTION: Pitch %>
+<div class="section-bg-1">
+  <section id="pitch" class="container">
 
-<section id="slides" class="mt-5">
-  <% slides = %w[01 02 03 04 05 06 07 08 09] %>
-  <div id="carousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <% slides.each do |s| %>
-        <li data-target="#carousel" data-slide-to="<%= s.to_i %>" class="<%= 'active' if s == slides.first %>"></li>
-      <% end %>
-    </ol>
-    <div class="carousel-inner">
-      <% slides.each do |s| %>
-        <div class="carousel-item <%= 'active' if s == slides.first %>">
-          <%= image_tag "storyboard-slide-#{s}.jpg", class: 'd-block w-100' %>
-        </div>
-      <% end %>
+  <%= get_discourse_html_post(topic_id: 11340, post_id: 2) %>
+
+  </section>
+</div>
+
+<%# SECTION: Storyboard Slides %>
+<div class="section-bg-3">
+  <section id="slides" class="container">
+    <% slides = %w[01 02 03 04 05 06 07 08 09] %>
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <% slides.each do |s| %>
+          <li data-target="#carousel" data-slide-to="<%= s.to_i %>" class="<%= 'active' if s == slides.first %>"></li>
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% slides.each do |s| %>
+          <div class="carousel-item <%= 'active' if s == slides.first %>">
+            <%= image_tag "storyboard-slide-#{s}.jpg", class: 'd-block w-100' %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</section>
+  </section>
+</div>
+
+<%# SECTION: We are Edgeryders %>
+<div class="section-bg-4">
+  <section id="edgeryders" class="container">
+
+    <h1><strong>We are Edgeryders</strong></h1>
+    
+    <div class="row flex-column flex-md-row flex-wrap md-px-12 md-mt-8 justify-content-between">
+
+      <%# Item "We are listening" %>
+      <div class="col-12 col-md-6 text-md-right p-2 pr-md-5">
+
+        <h2>And we are listening.</h2>
+
+        <p class=" text-xl">We are collecting your stories to better understand how we can level up impact of our 
+          efforts to fix socialecological, economic, and political challenges. We want to know what you have to say, 
+          and we want others to connect and collaborate with you.</p>
+          
+        <a href="https://edgeryders.eu/c/campfire">
+          <button class="text-white bg-primary border border-primary text-xm font-semibold rounded-lg px-4 py-3 mt-4 leading-normal">
+          Tell us what brings you here
+          </button>
+        </a>
+      
+      </div>
+
+      <%# Item "Icons" %>
+      <div class="col-12 col-md-6 p-2">
+
+        <div class="d-flex px-2 md-px-8">
+          <div class="icon automation"></div>
+          <div class="icon activism"></div>
+          <div class="icon healthcare"></div>
+          <div class="icon ai"></div>
+        </div>
+        
+        <div class="d-flex px-2 md-px-8">
+          <div class="icon elections"></div>
+          <div class="icon network"></div>
+          <div class="icon environment"></div>
+          <div class="icon nomad"></div>
+        </div>
+
+      </div>
+
+      <%# Item "Photo" %>
+      <div class="col-12 col-md-6 text-md-right p-2 pr-md-5">
+        <div class="er_photo">
+          <div class="photo">
+            <div class="description">(that's only some of us…)</div>
+          </div>
+        </div>
+      </div>
+
+      <%# Item "This is how it works" %>
+      <div class="col-12 col-md-6 p-2">
+
+        <h2 class="mb-4 md-mb-0">This is how it works.</h2>
+        
+        <p>Edgeryders is platform of over 5.000 people who have been sharing their stories, their 
+          ideas, their problems, and their solutions since 2013. All these posts together are what we call our 
+          "collective intelligence". Our data analysis team uses open source methodologies and technologies to 
+          create interactive visualisations of the conversations as they evolve. The visualisations make it easier 
+          for everyone to find and connect across common interests and new insights.</p>
+          
+        <a href="https://edgeryders.eu/c/campfire">
+          <button class="text-white bg-primary border border-primary text-xm font-semibold rounded-lg px-4 py-3 mt-4 leading-normal">
+            Connect with the community
+          </button></a>
+
+      </div>
+
+      <%# Item "Follow Us" %>
+      <div class="col-12 col-md-6 text-md-right p-2 pr-md-5">
+
+        <h2 class="font-display text-2xl mb-4 md:mb-0">Follow us</h2>
+        
+        <p>We would ask you to follow us on the usual social networks, but in our heart of hearts, we'd be much happier if 
+          you signed up to the platform and made a quick introduction to the community. We don't bite.</p>
+          
+        <p><strong>(But if you insist ...)</strong></p>
+      
+      </div>
+
+      <%# Item "Social Media Links" %>
+      <div class="col-12 col-md-6 p-2">
+
+        <div class="d-flex pt-4 md-pt-10">
+          <a href="https://twitter.com/edgeryders" class="social twitter"></a>
+          <a href="https://facebook.com/edgeryders" class="social facebook"></a>
+          <a href="mailto:info@edgeryders.eu" class="social email"></a>
+        </div>
+        
+        <div class="arrow d-none d-md-block"></div>
+
+      </div>
+    </div>
+
+  </section>

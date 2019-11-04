@@ -1,51 +1,38 @@
-<% content_for(:main_classes){ "illustration-page-01" } %>
+<%# SECTION: Team & Contact %>
+<div class="section-bg-1">
+  <h1 id="about"><strong>About</strong></h1>
+  <section id="team" class="container">
 
-<section id="about-page" class="mt-5">
+    <h2>Team &amp; Contact</h2>
 
-  <h1 id="about">About</h1>
+    <% team_data = get_team() %>
+    <% team_data.each do |member| %>
 
-  <!-- SECTION: Team & Contact -->
+      <div class="card card-teammember mb-4">
+        <div class="row no-gutters">
 
-  <h2 id="team">Team &amp; Contact</h2>
-
-  <% team_data = get_team() %>
-  <% team_data.each do |member| %>
-
-    <div class="card card-teammember mb-4">
-      <div class="row no-gutters">
-
-        <div class="col-md-4 d-flex flex-wrap align-items-center">
-          <img src="<%= member['photo_url'] %>" class="card-img">
-        </div>
-
-        <div class="col-md-8">
-          <div class="card-body">
-
-            <h5 class="card-title"><%= member['name'] %> | <%= member['role'] %></h5>
-
-            <div class="card-text"><%= member['description'] %></div>
-            <div class="card-text">
-              <%= link_to member['email'], "mailto:#{member['email']}" %> |
-              <%= link_to "@#{member['username']} on Edgeryders", "https://edgeryders.eu/u/#{member['username']}" %>
-            </div>
-
+          <div class="col-md-4 d-flex flex-wrap align-items-center">
+            <img src="<%= member['photo_url'] %>" class="card-img">
           </div>
+
+          <div class="col-md-8">
+            <div class="card-body">
+
+              <h5 class="card-title"><%= member['name'] %> | <%= member['role'] %></h5>
+
+              <div class="card-text"><%= member['description'] %></div>
+              <div class="card-text">
+                <%= link_to member['email'], "mailto:#{member['email']}" %> |
+                <%= link_to "@#{member['username']} on Edgeryders", "https://edgeryders.eu/u/#{member['username']}" %>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-
       </div>
-    </div>
 
-  <% end %>
+    <% end %>
 
-  <!-- SECTION: Privacy & Consent -->
-
-  <h2 id="privacy">Privacy & Consent</h2>
-
-  <%= get_discourse_html_post(topic_id: 10901, post_id: 2) %>
-
-  <!-- SECTION: Legal Information -->
-
-  <h2 id="legals">Legal Information</h2>
-
-  <%= get_discourse_html_post(topic_id: 11339, post_id: 2) %>
-</section>
+  </section>
+</div>

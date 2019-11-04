@@ -10,22 +10,25 @@
   <link rel="icon" href="/assets/images/earthos-logo.png" sizes="32x32">
   <link rel="apple-touch-icon-precomposed" href="/assets/images/earthos-logo.png">
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,700|Playfair+Display:400,700&display=swap">
+
   <%= stylesheet_link_tag "site" %>
 </head>
 
 <body>
 
-<%= partial "navbar" %>
+<%# Header section with navbar and varying background and content. %>
+<div class="page-header <%= yield_content :page_header_bg %>">
+  <%= partial "navbar" %>
 
-<%# Page block rendered directly on the page background, outside the main content area.
-    Only present if defined by a page via "content_for :page_header". %>
-<%= yield_content :page_header %>
+  <%# Page block rendered directly into the page header, outside the main content area.
+    Only present if defined by a page via "content_for :page_header_overlay". %>
+  <%= yield_content :page_header_overlay %>
+</div>
 
-<main role="main" class="container mt-5 <%= yield_content :main_classes %>">
-  <div class="p-4 pb-5">
-    <%# Main content of the page to which this layout is applied. %>
-    <%= yield :content %>
-  </div>
+<main role="main">
+  <%# Main content of the page to which this layout is applied. %>
+  <%= yield :content %>
 </main>
 
 <%= partial "footer" %>
