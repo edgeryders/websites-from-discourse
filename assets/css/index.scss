@@ -92,7 +92,7 @@ h4 {
   background-position: top;
 }
 
-// Storyboard slides
+// Intro video
 .section-bg-3 {
   background-color: #1b2a34;
 }
@@ -229,14 +229,21 @@ h4 {
 /* CHAPTER: Content section "Storyboard Slides" */
 /*********************************************/
 
-section#slides {
-  /* Scale the slide size proportionally so that their height is a bit less than the viewport. Because with our
-     1200x628 slides, this follows from: 1200 px / 628 px = x%vh / 90% vh <=> x = 1200 px / 629 px * 90%vh = 172% vh. */
-  /* TODO: Apply this rule as "max-height: 90vh" and let the width scale proportionally. That would be more intuitive 
-     But so far fails due to relative positiong of contained elements etc..*/
-  max-width: calc(1200 / 629 * 90vh);
+section#intro-video .video-container {
+  position: relative;
+  // Percentual padding in relative positioning is relative to "element width plus margins" (weird …).
+  // Video resolution is 1408×792 so height is 792/1408 = 56.25% of width. With that, we can create 
+  // space where the video will fit in perfectly.
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
 
-  margin: auto;
+section#intro-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* CHAPTER: Content section "We are Edgeryders" */
